@@ -21,7 +21,7 @@
 					<img class="imgSize" src="http://placekitten.com/400/400" alt="">
 
 					<div class="caption">
-						<h3>Show Name</h3>
+						<h3><a href="/events/{{$i}}">Show Name</a></h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -41,7 +41,7 @@
     		<img class="media-object" src="http://placekitten.com/150/150">
   		</a>
   		<div class="media-body">
-    		<a href="#"><h4 class="media-heading">Event {{$i}}</h4></a>
+    		<a href="/events/{{$i}}"><h4 class="media-heading">Event {{$i}}</h4></a>
           <p>Info</p>
           
        </div>
