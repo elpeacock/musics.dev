@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Musics.dev</a>
+            <a class="navbar-brand" href="/">Musics.dev</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,6 +16,8 @@
             <ul class="nav navbar-nav">
                 <li><a href="#">Events</a></li>
                 <li><a href="#">Profile</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
             </ul>
             <form class="navbar-form navbar-right" method="GET">
                 <div class="form-group">
