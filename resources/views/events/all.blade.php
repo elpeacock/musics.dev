@@ -16,7 +16,7 @@
   		<div class="media-body">
     		<a href="events/{{$i}}"><h4 class="media-heading">Event {{$i}}</h4></a>
           <p>Info</p>
-          
+
        </div>
     </div>
   </div>

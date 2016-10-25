@@ -58,7 +58,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editPassword($id)
     {
         return view('user.edit');
 
@@ -71,10 +71,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    public function updatePassword(Request $request, $id)
+    {
+
+
+
+    }
+
     public function update(Request $request, $id)
     {
         //
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -86,4 +96,12 @@ class UserController extends Controller
     {
         //
     }
+
+
+    public function search(Request $request)
+    {
+
+
+    }
+
 }
