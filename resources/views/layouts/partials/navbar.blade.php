@@ -1,19 +1,20 @@
-<div class="navbar navbar-inverse">
-    <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Musics.dev</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+<!-- Begin Navbar -->
+<div id="nav">
+  <div class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="100">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button>
+          <a class="navbar-brand" href="#"><img class="img-responsive logo" src="https://cdn4.iconfinder.com/data/icons/adore/118/Camera.png" alt=""></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+
+          <ul class="nav navbar-nav">
                 <li><a href="#">Events</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Login</a></li>
@@ -25,6 +26,9 @@
                 </div>
                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
             </form>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+      <!--/.contatiner -->
+</div>
 </div>

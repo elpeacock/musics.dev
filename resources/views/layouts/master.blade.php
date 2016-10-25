@@ -8,7 +8,7 @@
 </head>
 <body>
 	@include('layouts.partials.navbar')
-	
+
 	<div class="container">
     	@yield('content')
     </div>
@@ -16,5 +16,15 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script  $(window).scroll(function() {
+if ($(document).scrollTop() > 150) {
+    alert('hi');
+$('.logo').height(200);
+
+}
+else {
+$('.logo').height(100);
+});
+</script>
 </body>
 </html>
