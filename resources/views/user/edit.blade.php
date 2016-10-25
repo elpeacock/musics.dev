@@ -14,7 +14,7 @@
                         id="first_name"
                         placeholder="First name"
                         value="{{ $user->first_name }}">
-
+                
             </div>
             <div class="form-group">
                 <input
@@ -24,7 +24,7 @@
                         id="last_name"
                         placeholder="Last name"
                         value="{{ $user->last_name }}">
-
+                
             </div>
             <div class="form-group">
                 <input
@@ -34,7 +34,7 @@
                         id="email"
                         placeholder="Email"
                         value="{{ $user->email }}">
-
+                
             </div>
             <div class="form-group">
                 <label for="image">Add a Profile Picture</label>

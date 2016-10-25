@@ -1,16 +1,43 @@
 .fb-profile img.fb-image-lg{
     z-index: 0;
-    width: 100%;  
+    width: 100%;
     margin-bottom: 10px;
 }
 
 .fb-image-profile{
     margin: -90px 10px 0px 50px;
     z-index: 9;
-    width: 20%; 
+    width: 20%;
 }
 #map-canvas {
     width: 100%;
 	height: 481px;
 	margin: auto;
+}
+html,body {
+    height:100%;
+    padding-top:70px;
+}
+
+
+section {
+  height:calc(90% - 50px);
+}
+
+.affix {
+  padding:0px;
+  -webkit-transition:padding 0.2s linear;
+  -moz-transition:padding 0.2s linear;
+  -o-transition:padding 0.2s linear;
+  transition:padding 0.2s linear;
+
+}
+
+.affix-top {
+  padding-top:15px;
+  padding-bottom:15px;
+  -webkit-transition:padding 0.5s linear;
+  -moz-transition:padding 0.5s linear;
+  -o-transition:padding 0.5s linear;
+  transition:padding 0.5s linear;
 }
