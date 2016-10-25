@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('events.index');
 });
-
+Route::resource('user', 'UserController');
 Route::resource('events', 'EventsController');
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
