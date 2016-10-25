@@ -12,7 +12,16 @@ class CreateUserGenresTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('user_genres', function(Blueprint $table) {
+
+            $table->integer('user_id')->unsigned;
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->integer('genre_id')->unsigned;
+            $table->foreign('genre_id')->references('id')->on('genres');
+
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +31,6 @@ class CreateUserGenresTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('rsvps');
     }
 }
