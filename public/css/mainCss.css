@@ -14,6 +14,11 @@
 	height: 481px;
 	margin: auto;
 }
+
+#footer{
+	margin-bottom: 0px;
+}
+
 html,body {
     height:100%;
     padding-top:70px;
@@ -41,3 +46,4 @@ section {
   -o-transition:padding 0.5s linear;
   transition:padding 0.5s linear;
 }
+

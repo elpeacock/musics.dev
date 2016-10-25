@@ -15,13 +15,13 @@
 				<input type="text" class="form-control" name="venue" id="venue" placeholder="Venue">
 			</div>
 			<div class="form-group">
-				<input type="text" class="form-control" name="time" id="time" placeholder="Time">
+				<input type="date" class="form-control" name="time" id="time" placeholder="Time">
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" name="price" id="price" placeholder="price">
 			</div>
 			<div class="form-group">
-				<input type="text" class="form-control" name="venue" id="venue" placeholder="Venue">
+				<input type="text" class="form-control" name="description" id="description" placeholder="Description">
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" name="tickets" id="tickets" placeholder="Ticket Purchase Location">
