@@ -23,7 +23,8 @@ class CreateEventsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('events', function (Blueprint $table) {
+        // create fk's
+        Schema::table('events', function (Blueprint $table) {
 
             $table->foreign('band_id')->references('id')->on('bands');
             $table->foreign('venue_id')->references('id')->on('venues');
@@ -37,9 +38,13 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('events_band_id_foreign');
-        Schema::drop('events_venue_id_foreign');
-        
+        // drop fk's
+        Schema::table('events', function (Blueprint $table) {
+            $table->dropForeign('events_band_id_foreign');
+            $table->dropForeign('events_venue_id_foreign');
+
+        });
+
         Schema::drop('events');
     }
 }
