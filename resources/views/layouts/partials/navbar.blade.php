@@ -14,7 +14,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">Events</a></li>
+                <li><a href="{{action('EventsController@index')}}">Events</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Login</a></li>
                 <li><a href="#">Register</a></li>
