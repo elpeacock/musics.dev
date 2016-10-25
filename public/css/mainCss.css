@@ -4,9 +4,13 @@
     margin-bottom: 10px;
 }
 
-.fb-image-profile
-{
+.fb-image-profile{
     margin: -90px 10px 0px 50px;
     z-index: 9;
     width: 20%; 
+}
+#map-canvas {
+    width: 100%;
+	height: 481px;
+	margin: auto;
 }
