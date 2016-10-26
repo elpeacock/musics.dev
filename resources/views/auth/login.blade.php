@@ -8,10 +8,12 @@
 			{{ csrf_field() }}
 			<div class="form-group">
 				<input type="text" class="form-control" name="email" id="email" placeholder="email">
+				@include('forms.error', ['field' => 'email'])
 
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control" name="password" id="password" placeholder="password">
+				@include('forms.error', ['field' => 'password'])
 
 			</div>
 			<div class="form-group">
@@ -22,19 +24,3 @@
 	</div>
 </div>
 @stop
-<html>
-  <head>
-    <link href="path/to/multiselect.css" media="screen" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <select multiple="multiple" id="my-select" name="my-select[]">
-      <option value='elem_1'>elem 1</option>
-      <option value='elem_2'>elem 2</option>
-      <option value='elem_3'>elem 3</option>
-      <option value='elem_4'>elem 4</option>
-      ...
-      <option value='elem_100'>elem 100</option>
-    </select>
-    <script src="path/to/jquery.multi-select.js" type="text/javascript"></script>
-  </body>
-</html>

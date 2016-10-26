@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-      
+
 
         <dl class="dropdown">
 
@@ -45,7 +45,8 @@
                         name="HomeBase"
                         id="home_base"
                         placeholder="HomeBase"
-                        value="{{ $user->?????? }}">
+                        value="{{ $user->home_base }}">
+                        @include('forms.error', ['field' => 'HomeBase'])
 
             </div>
             <div class="form-group">
@@ -55,17 +56,8 @@
                         name="first_name"
                         id="first_name"
                         placeholder="First name"
-                        value="{{ $user->first_name }}">
-
-            </div>
-            <div class="form-group">
-                <input
-                        type="text"
-                        class="form-control"
-                        name="last_name"
-                        id="last_name"
-                        placeholder="Last name"
-                        value="{{ $user->last_name }}">
+                        value="{{ $user->user_name }}">
+                        @include('forms.error', ['field' => 'name'])
 
             </div>
             <div class="form-group">
@@ -76,6 +68,7 @@
                         id="email"
                         placeholder="Email"
                         value="{{ $user->email }}">
+                        @include('forms.error', ['field' => 'user'])
 
             </div>
           </div>
