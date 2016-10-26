@@ -50,7 +50,7 @@
 
 /*1 and 3 on side*/
 .secondRow{
-  height: 33.33%; 
+  height: 33.33%;
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
@@ -151,10 +151,10 @@ footer ul {
 .footer-bottom {
 	width: 100%;
 	background: #E2D0BE;
-	border-top: 1px solid black;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 .footer-bottom p.pull-left {
+  color: #234968;
 	padding-top: 7px;
 }
