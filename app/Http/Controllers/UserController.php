@@ -19,17 +19,13 @@ class UserController extends Controller
 		if (!$user) {
 			abort(404);
 		}
-		$reviews = Review::where('created_by', $id)->orderBy('created_at')->get();
-		$data = [
-			'user' => $user,
-			'reviews' => $reviews
-		];
+
 		return view('users.show', $data);
     }
     public function edit($id)
     {
 		if (!Auth::check() || Auth::user()->id != $id) {
-			return redirect()->action('BarsController@index');
+			return redirect()->action('EventsController@index');
 		}
 		$user = User::find($id);
 		if (!$user) {
@@ -45,28 +41,13 @@ class UserController extends Controller
 		if (!Auth::check()) {
 			return view('auth.login');
 		}
-		session()->flash('fail', 'Your information was NOT updated. Please fix errors.');
-		$v = Validator::make($request->all(), User::$updateRules);
-		$v->sometimes('email', 'required|email|max:244|unique:users', function($input) use($id) {
-			return User::find($id)->email !== $input->email;
-		});
-		if ($v->fails()) {
-			return redirect()->back()->withInput()->withErrors($v);
-		}
 		$user = User::find($id);
 		if (!$user) {
 			abort(404);
 		}
-		$user->first_name = $request->input('first_name');
-		$user->last_name = $request->input('last_name');
+		$user->first_name = $request->input('user_name');
 		$user->email = $request->input('email');
-		if ($request->file('image')) {
-			$imagePath = 'img/';
-			$imageExtension = $request->file('image')->getClientOriginalExtension();
-			$imageName = uniqid() . '.' . $imageExtension;
-			$request->file('image')->move($imagePath, $imageName);
-			$user->avatar = '/img/' . $imageName;
-		}
+
 		$user->save();
 		session()->flash('success', 'Your information was updated successfully!');
 		return redirect()->action('UserController@show', $user->id);
@@ -77,7 +58,7 @@ class UserController extends Controller
 		if (!$user) {
 			abort(404);
 		} elseif ($user->id != \Auth::user()->id) {
-			return redirect()->action('BarsController@index');
+			return redirect()->action('EventsController@index');
 		}
 		$data = [
 			'user' => $user
@@ -100,19 +81,11 @@ class UserController extends Controller
     {
 		$user = User::find($id);
 		$user->delete();
-		// Do we want to delete the user reviews if account is deleted?
-		$reviews = Review::where('created_by', $id)->orderBy('created_at');
-		$reviews->delete();
-		//
 		session()->flash('success', 'Your account was deleted successfully!');
-		return redirect()->action('BarsController@index');
+		return redirect()->action('eventsController@index');
     }
     public function search(Request $request)
     {
-        $searchTerm = $request->input('searchTerm');
-        $data = User::searchBy($searchTerm);
-        $data->orderBy('first_name', 'asc');
-        return view('users.index')->with('data', $data);
-//        need a users index plz and ty
+
     }
 }
