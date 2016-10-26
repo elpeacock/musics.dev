@@ -35,11 +35,47 @@
 .imgSize{
   width: 100%;
   height: 100%;
+  padding: 1px;
+  clear: both;
 }
+.mainImg{
+  height: 100%;
+  margin-bottom: 25px;
+}
+.bigImg{
+  height: 500px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/*1 and 3 on side*/
+.secondRow{
+  height: 33.33%; 
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  .bigImg{
+    height: 100%;
+  }
+  .secondRow{
+    height: 200px;
+  }
+}
+
 .imgUnder{
   padding-right: 0px;
   padding-left: 0px;
 }
+
+/*1 and 3 under*/
+/*.secondRow{
+  height: 200px;
+}
+*/
+/*.imgUnder{
+  padding-right: 0px;
+  padding-left: 0px;
+}*/
 
 .navbar-default .navbar-nav>li>a {
     color: #234968;
