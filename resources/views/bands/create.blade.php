@@ -13,14 +13,6 @@
 				<input type="text" class="form-control" name="bandName" id="bandName" placeholder="Band Name">
 			</div>
 			<div class="form-group">
-				<select>
-				  <option value="genre">Genre</option>
-				  <option value="genre">Genre</option>
-				  <option value="genre">Genre</option>
-				  <option value="genre">Genre</option>
-				</select>
-			</div>
-			<div class="form-group">
 				<input type="text" class="form-control" name="description" id="description" placeholder="Description">
 			</div>
 			<div class="form-group">

@@ -30,6 +30,12 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $fillable = ['first_name', 'last_name', 'email', 'password'];
 
+    public function bands()
+    {
+        return $this->hasMany('App\Band', 'owner_id');
+    }
+
+
     /**
      * The attributes excluded from the model's JSON form.
      *
