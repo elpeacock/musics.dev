@@ -12,6 +12,7 @@ AuthorizableContract,
 CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
+    
     public static $rules =
     [
     'first_name' => 'required|max:255',
@@ -19,25 +20,28 @@ CanResetPasswordContract
     'email' => 'required|email|max:244|unique:users',
     'password' => 'required|between:6,60|confirmed'
     ];
+    
     public static $updateRules =
     [
-    'first_name' => 'required|max:255',
-    'last_name' => 'required|max:255',
-    'email' => 'required|email|max:244'
+        'first_name' => 'required|max:255',
+        'last_name' => 'required|max:255',
+        'email' => 'required|email|max:244'
     ];
+    
     public static $passwordRules = [
-    'password' => 'required|between:6,60|confirmed'
+        'password' => 'required|between:6,60|confirmed'
     ];
+    
     public static function isEmailDuplicate($email) {
-      return User::where('email', $email)->count()>0;
-  }
+
+        return User::where('email', $email)->count()>0;
+    }
     /**
      * The database table used by the model.
      *
      * @var string
      */
     protected $table = 'users';
-
 
     /**
      * The attributes that are mass assignable.
@@ -46,10 +50,6 @@ CanResetPasswordContract
      */
     protected $fillable = ['first_name', 'last_name', 'email', 'password'];
 
-    public function bands()
-    {
-        return $this->hasMany('App\Band', 'owner_id');
-    }
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -59,7 +59,14 @@ CanResetPasswordContract
     protected $hidden = ['password', 'remember_token'];
 
 
-    public function events(){
+    public function events()
+    {
         return $this->hasMany(Event::class, 'created_by');
     }
+    
+    public function bands()
+    {
+        return $this->hasMany('App\Band', 'owner_id');
+    }
 }
+    
