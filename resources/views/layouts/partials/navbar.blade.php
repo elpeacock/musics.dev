@@ -49,7 +49,7 @@
         
         </button>
 
-        <a class="navbar-brand" href="">ShowUp<span class="flashy">.buzz</span></a>
+        <a class="navbar-brand" href="#">ShowUp<span class="flashy">.buzz</span></a>
 
     </div>
 
@@ -63,20 +63,20 @@
                 
                 <ul class="dropdown-menu">
                     
-                    <li><a href="#">Account Info</a></li>
+                    <li><a href="{{ action('UserController@show', Auth::id() ) }}">Account Info</a></li>
                     
-                    <li><a href="#">Create An Event</a></li>
+                    <li><a href="{{ action('EventsController@create') }}">Create An Event</a></li>
                     
                     <li class="divider"></li>
                     
                     <li><a href="#">Log Out</a></li>                 
                 </ul>
             
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="{{ action('Auth\AuthController@getRegister') }}">Sign Up</a></li>
             
-            <li><a href="#">Log In</a></li>
+            <li><a href="{{ action('Auth\AuthController@getLogin') }}">Log In</a></li>
 
-            <li><a href="#">Events</a></li>
+            <li><a href="{{ action('EventsController@index') }}">Events</a></li>
             
             </li>
        
