@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 Route::resource('user', 'UserController');
 Route::resource('events', 'EventsController');
+Route::resource('bands', 'BandsController');
+
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 
