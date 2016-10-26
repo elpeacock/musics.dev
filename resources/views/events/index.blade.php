@@ -34,14 +34,26 @@
  --}}
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainImg">
-<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 bigImg">
+
+<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 imgUnder bigImg" data-content="Band Name: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation">
 	<img class="imgSize" src="/img/concert.jpg">
 </div>
+
 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 bigImg">
 
-	<div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow"><img class="imgSize" src="/img/conert2.jpg"></div>
-	<div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow"><img class="imgSize" src="/img/concert3.jpg"></div>
-	<div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow"><img class="imgSize" src="/img/concert4.jpg"></div>
+	<div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Band Name: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation."><img class="imgSize" src="/img/conert2.jpg"></div>
+
+	<div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Band Name: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation"><img class="imgSize" src="/img/concert3.jpg"></div>
+
+	<div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Band Name: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation"><img class="imgSize" src="/img/concert4.jpg"></div>
 </div>
 </div>
 
