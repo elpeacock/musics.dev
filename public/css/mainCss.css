@@ -32,6 +32,10 @@
     color: #F05D5E;
 }
 
+.navbar-default .navbar-nav>li>a {
+    color: #234968;
+}
+
 /*feature on show page*/
 
 .imgSize{
@@ -80,11 +84,6 @@
   padding-left: 0px;
 }*/
 
-.navbar-default .navbar-nav>li>a {
-    color: #234968;
-} {
-    color: #F05D5E;
-}
 
 
 /*Footer*/
@@ -158,6 +157,6 @@ footer ul {
 	padding-bottom: 10px;
 }
 .footer-bottom p.pull-left {
-  color: #234968;
+    color: #234968;
 	padding-top: 7px;
 }
