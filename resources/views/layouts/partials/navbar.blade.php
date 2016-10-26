@@ -63,7 +63,7 @@
                 
                 <ul class="dropdown-menu">
                     
-                    <li><a href="{{ action('UserController@show', Auth::id() ) }}">Account Info</a></li>
+                    <li><a href="{{ action('UserController@show') }}">Account Info</a></li>
                     
                     <li><a href="{{ action('EventsController@create') }}">Create An Event</a></li>
                     
