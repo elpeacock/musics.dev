@@ -37,12 +37,14 @@ CanResetPasswordContract
      * @var string
      */
     protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = ['first_name', 'last_name', 'email', 'password'];
+
     /**
      * The attributes excluded from the model's JSON form.
      *
@@ -53,5 +55,10 @@ CanResetPasswordContract
 
     public function events(){
         return $this->hasMany(Event::class, 'created_by');
+    }
+    
+    public function bands()
+    {
+        return $this->hasMany('App\Band', 'owner_id');
     }
 }
