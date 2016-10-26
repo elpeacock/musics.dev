@@ -47,3 +47,11 @@ section {
   transition:padding 0.5s linear;
 }
 
+.imgSize{
+  width: 100%;
+  height: 100%;
+}
+.imgUnder{
+  padding-right: 0px;
+  padding-left: 0px;
+}
