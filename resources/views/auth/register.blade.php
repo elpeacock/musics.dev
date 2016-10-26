@@ -12,9 +12,11 @@
             name="name"
             id="name"
             placeholder="first + last name">
+            @include('forms.error', ['field' => 'name'])
+
 
         </div>
-        
+
         <div class="form-group">
             <input
             type="text"
@@ -22,6 +24,7 @@
             name="email"
             id="email"
             placeholder="Email">
+            @include('forms.error', ['field' => 'email'])
 
         </div>
         <div class="form-group">
@@ -31,6 +34,7 @@
             name="password"
             id="password"
             placeholder="Password">
+            @include('forms.error', ['field' => 'password'])
             <small>Password has to be between 6-60 characters</small>
 
         </div>
@@ -41,6 +45,7 @@
             name="password_confirmation"
             id="password_confirmation"
             placeholder="Verify password">
+            @include('forms.error', ['field' => 'password_confirmation'])
 
         </div>
         <!-- add remember me button -->
