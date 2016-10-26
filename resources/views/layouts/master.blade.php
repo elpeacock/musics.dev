@@ -24,6 +24,7 @@ $('.logo').height(200);
 }
 else {
 $('.logo').height(100);
+}
 });
 </script>
 </body>
