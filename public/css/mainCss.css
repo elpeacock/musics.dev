@@ -83,3 +83,78 @@
     color: #F05D5E;
 }
 
+
+/*Footer*/
+
+footer ul li a {
+	padding: 5px;
+	display: block;
+}
+
+footer ul {
+	font-size: 13px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 15px;
+	color: #F05D5E;
+}
+
+.social li {
+	background: none repeat scroll 0 0 #F05D5E;
+	border: 2px solid #F05D5E;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	float: left;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 8px 0 0;
+	padding: 0;
+	text-align: center;
+	width: 36px;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+.social li:hover {
+	transform: scale(1.15) rotate(360deg);
+	-webkit-transform: scale(1.1) rotate(360deg);
+	-moz-transform: scale(1.1) rotate(360deg);
+	-ms-transform: scale(1.1) rotate(360deg);
+	-o-transform: scale(1.1) rotate(360deg);
+}
+.social li a {
+	color: #F05D5E ;
+}
+
+.social li:hover {
+	border: 2px solid  #2;
+	background: #234968;
+}
+
+
+.social li a i {
+	font-size: 16px;
+	margin: 0 0 0 5px;
+	color:#E2D0BE;
+}
+
+.social li a i:hover {
+	color: #083b66;
+}
+
+.footer-bottom {
+	width: 100%;
+	background: #E2D0BE;
+	border-top: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.footer-bottom p.pull-left {
+	padding-top: 7px;
+}
