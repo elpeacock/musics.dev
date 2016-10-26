@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-xs-8 col-xs-offset-2">
-    <h4 class="modal-title">Create a new account</h4>
+    <h2>Create a new account</h2>
     <form method="POST" action="{{ action('Auth\AuthController@postRegister') }}">
         {{ csrf_field() }}
         <div class="form-group">
