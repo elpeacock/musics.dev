@@ -25,7 +25,7 @@ class EventsTableSeeder extends Seeder
             'event_time' => '8:00 pm',
             'price' => 10.00,
             'buy_tickets' => 'ticketfly.com, or at the venue',
-        ])
+        ]);
 
         
     }
