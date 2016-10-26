@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="fb-profile">
-        <img align="left" class="fb-image-lg" src="http://placekitten.com/850/280" alt="Profile image example"/>
+        <img align="left" class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/>
 {{--         <img align="left" class="fb-image-profile thumbnail" src="http://placekitten.com/150/150" alt="Profile image example"/> --}}
         <div class="fb-profile-text">
             <h1>Band/Show Event</h1>
