@@ -19,7 +19,7 @@
                 name="name"
                 id="name"
                 placeholder="first + last name">
-                @include('forms.error', ['field' => 'name'])
+                {{-- @include('forms.error', ['field' => 'name']) --}}
 
             </div>
 
@@ -31,7 +31,19 @@
                 name="email"
                 id="email"
                 placeholder="Email">
-                @include('forms.error', ['field' => 'email'])
+                {{-- @include('forms.error', ['field' => 'email']) --}}
+
+            </div>
+
+            <div class="form-group">
+
+                <input
+                type="text"
+                class="form-control"
+                name="zip"
+                id="zip"
+                placeholder="Zip">
+                {{-- @include('forms.error', ['field' => 'email']) --}}
 
             </div>
 
@@ -43,7 +55,7 @@
                 name="password"
                 id="password"
                 placeholder="Password">
-                @include('forms.error', ['field' => 'password'])
+                {{-- @include('forms.error', ['field' => 'password']) --}}
                 <small>Password has to be between 6-60 characters</small>
 
             </div>
@@ -55,7 +67,7 @@
                 name="password_confirmation"
                 id="password_confirmation"
                 placeholder="Verify password">
-                @include('forms.error', ['field' => 'password_confirmation'])
+                {{-- @include('forms.error', ['field' => 'password_confirmation']) --}}
 
             </div>
             <!-- add remember me button -->
