@@ -1,50 +1,35 @@
-.fb-profile img.fb-image-lg{
-    z-index: 0;
-    width: 100%;
-    margin-bottom: 10px;
-}
+/*search nav*/
 
-.fb-image-profile{
-    margin: -90px 10px 0px 50px;
-    z-index: 9;
-    width: 20%;
-}
-#map-canvas {
-    width: 100%;
-	height: 481px;
-	margin: auto;
-}
+.form-inline {
 
-#footer{
-	margin-bottom: 0px;
-}
-
-html,body {
-    height:100%;
-    padding-top:70px;
-}
-
-
-section {
-  height:calc(90% - 50px);
-}
-
-.affix {
-  padding:0px;
-  -webkit-transition:padding 0.2s linear;
-  -moz-transition:padding 0.2s linear;
-  -o-transition:padding 0.2s linear;
-  transition:padding 0.2s linear;
+    margin-top: 5px;
+    margin-bottom: 5px;
 
 }
 
-.affix-top {
-  padding-top:15px;
-  padding-bottom:15px;
-  -webkit-transition:padding 0.5s linear;
-  -moz-transition:padding 0.5s linear;
-  -o-transition:padding 0.5s linear;
-  transition:padding 0.5s linear;
+.nav-top {
+
+    background-color: #234968;
+}
+
+.navbar-search {
+    background-color: #F05D5E;
+}
+
+/*link navbar*/
+
+.navbar-default {
+    background-color: #E2D0BE;
+    border: none;
+    border-radius: 0px;
+}
+
+.flashy {
+    color: #234968;
+}
+
+.navbar-default .navbar-brand {
+    color: #F05D5E;
 }
 
 .imgSize{
@@ -55,3 +40,10 @@ section {
   padding-right: 0px;
   padding-left: 0px;
 }
+
+.navbar-default .navbar-nav>li>a {
+    color: #234968;
+} {
+    color: #F05D5E;
+}
+
