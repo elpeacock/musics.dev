@@ -17,6 +17,6 @@ class GenresTableSeeder extends Seeder
 
     	DB::table('genres')->insert([
     		'name' => 'country',
-		])
+		]);
     }
 }
