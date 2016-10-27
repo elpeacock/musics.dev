@@ -12,9 +12,22 @@ class CreateAllPerformersTable extends Migration
      */
     public function up()
     {
-        Schema::create('all_performers', function (Blueprint $table) {
+        Schema::create('bands', function (Blueprint $table) {
+            
             $table->increments('id');
+            $table->string('name');
+            $table->integer('genre_id')->unsigned();
+            $table->integer('owner_id')->unsigned();
+            $table->text('description');
+            $table->string('image_url')->nullable();
             $table->timestamps();
+        });
+
+        // Declare foreign keys
+        Schema::table('bands', function (Blueprint $table) {
+            
+            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreign('owner_id')->references('id')->on('users');
         });
     }
 
@@ -25,6 +38,13 @@ class CreateAllPerformersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('all_performers');
+        // Drop foreign keys
+        Schema::table('bands', function (Blueprint $table) {
+            $table->dropForeign('bands_genre_id_foreign');
+            $table->dropForeign('bands_owner_id_foreign');
+
+        });
+
+        Schema::drop('bands');
     }
 }
