@@ -29,6 +29,7 @@ class Event extends Model
     {
     	$currentDate = Carbon::now();
     	return Event::where('date', '>=', $currentDate)->orderBy('date', 'asc');
+    }
 
 
 	public function band()

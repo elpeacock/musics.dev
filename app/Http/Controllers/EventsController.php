@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Event;
+use App\Band;
 
 class EventsController extends Controller
 {
@@ -32,7 +33,10 @@ class EventsController extends Controller
           if (!Auth::check()) {
         		return view('auth.login');
     		}
-    		return view('events.create');
+        $bands = Band::all();
+
+    		return view('events.create')->with('bands',$bands);
+
     }
 
     /**
@@ -129,4 +133,5 @@ class EventsController extends Controller
       		return redirect()->action('EventsController@index');
 
     }
+
 }
