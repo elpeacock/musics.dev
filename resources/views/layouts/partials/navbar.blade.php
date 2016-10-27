@@ -49,7 +49,7 @@
         
         </button>
 
-        <a class="navbar-brand" href="#">ShowUp<span class="flashy">.buzz</span></a>
+        <a class="navbar-brand" href="/">ShowUp<span class="flashy">.buzz</span></a>
 
     </div>
 
