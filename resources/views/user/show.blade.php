@@ -10,6 +10,7 @@
 	<hr>
 
 	<h2>Events</h2>
-
-
+	{{-- @foreach($users->events as $event)
+		<h4 class="media-heading">{{ $event->title }}</h4>
+	@endforeach --}}
 @stop
