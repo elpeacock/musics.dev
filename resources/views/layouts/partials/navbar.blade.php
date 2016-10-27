@@ -80,6 +80,7 @@
     @endif               
 
             <li><a href="{{ action('EventsController@index') }}">Events</a></li>
+            <li><a href="{{ action('BandsController@index') }}">Bands</a></li>
             
             </li>
        
