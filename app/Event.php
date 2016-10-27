@@ -15,7 +15,6 @@ class Event extends Model
 	}
 	public static $rules =
 		[
-
       'band' =>'required|max:255',
       'venue' =>'required|max:255',
       'time' =>'required',

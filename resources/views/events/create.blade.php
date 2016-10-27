@@ -9,9 +9,13 @@
 		<form method="POST" action="{{ action('EventsController@store') }}" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<div class="form-group">
+				<select>
 				@foreach ($bands as $band_id => $value)
-					<option value="{{ $band->band_id }}">{{ $band->band_id }}</option>
+					<option value="{{ $band_id }}">{{ $value->name }}</option>
 				@endforeach
+			</select>
+				<input type="submit" value="Submit">
+
 				//include('forms.error', ['field' => 'band'])
 			</div>
 			<div class="form-group">
