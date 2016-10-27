@@ -13,26 +13,22 @@ class CreateBandsTable extends Migration
     public function up()
     {
         Schema::create('bands', function (Blueprint $table) {
-
+            
             $table->increments('id');
             $table->string('name');
-            $table->integer('genre_id')->unsigned();
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->integer('genre_id')->unsigned()->unique();
             $table->integer('owner_id')->unsigned();
-            $table->foreign('owner_id')->references('id')->on('users');
             $table->text('description');
             $table->string('image_url')->nullable();
             $table->timestamps();
         });
-
         // Declare foreign keys
-        // Schema::table('bands', function (Blueprint $table) {
-        //
-        //     $table->foreign('genre_id')->references('id')->on('genres');
-        //     $table->foreign('owner_id')->references('id')->on('users');
-        // });
+        Schema::table('bands', function (Blueprint $table) {
+            
+            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreign('owner_id')->references('id')->on('users');
+        });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -44,9 +40,7 @@ class CreateBandsTable extends Migration
         Schema::table('bands', function (Blueprint $table) {
             $table->dropForeign('bands_genre_id_foreign');
             $table->dropForeign('bands_owner_id_foreign');
-
         });
-
         Schema::drop('bands');
     }
 }
