@@ -16,7 +16,7 @@ class BandsController extends Controller
      */
     public function index()
     {
-        $data['bands'] = \App\Band::paginate(12);
+        $data['bands'] = \App\Band::paginate(15);
         return view('bands.index')->with($data);
     }
 

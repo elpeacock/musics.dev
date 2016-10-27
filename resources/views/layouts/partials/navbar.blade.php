@@ -60,11 +60,11 @@
      @if(Auth::check())
             <li class="dropdown">
                 
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}<b class="caret"></b></a>
                 
                 <ul class="dropdown-menu">
                     
-                    <li><a href="{{ action('UserController@show') }}">Account Info</a></li>
+                    <li><a href="{{ action('UserController@show', Auth::id()) }}">Account Info</a></li>
 
                     <li><a href="{{ action('UserController@pickFavoriteBands') }}">Pick Your Faves</a></li>
                     
