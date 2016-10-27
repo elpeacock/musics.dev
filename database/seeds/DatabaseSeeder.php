@@ -14,6 +14,12 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        DB::table('events')->delete();
+        DB::table('venues')->delete();
+        DB::table('bands')->delete();
+        DB::table('genres')->delete();
+        DB::table('users')->delete();
+
         $this->call(UsersTableSeeder::class);
         $this->call(GenresTableSeeder::class);
         $this->call(BandsTableSeeder::class);
