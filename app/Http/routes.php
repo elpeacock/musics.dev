@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('events.index');
 });
 Route::resource('user', 'UserController');
+Route::put('/{user}/favorites', 'UserController@pickFavoriteBands');
 Route::resource('events', 'EventsController');
 Route::resource('bands', 'BandsController');
 

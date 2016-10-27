@@ -65,6 +65,8 @@
                 <ul class="dropdown-menu">
                     
                     <li><a href="{{ action('UserController@show') }}">Account Info</a></li>
+
+                    <li><a href="{{ action('UserController@pickFavoriteBands') }}">Pick Your Faves</a></li>
                     
                     <li><a href="{{ action('EventsController@create') }}">Create An Event</a></li>
                     
