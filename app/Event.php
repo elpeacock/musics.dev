@@ -30,11 +30,12 @@ class Event extends Model
     	$currentDate = Carbon::now();
     	return Event::where('date', '>=', $currentDate)->orderBy('date', 'asc');
 
-    }
 
 	public function band()
     {
-        return $this->hasOne('App\Band', 'user_id');
+        return $this->hasOne('App\Band', 'band_id');
     }
-  protected $fillable = ['band_id', 'venue_id', 'price', 'event_time', 'buy_tickets'];
+
+  // protected $fillable = ['band_id', 'venue_id', 'price', 'event_time', 'buy_tickets'];
+
 }

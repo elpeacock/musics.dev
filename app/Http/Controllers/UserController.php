@@ -15,7 +15,7 @@ class UserController extends Controller
     }
     public function show($id)
     {
-        $data['users'] = \App\Band::findOrFail($id);
+        $data['user'] = \App\User::findOrFail($id);
         return view('user.show')->with($data);
     }
     public function edit($id)
