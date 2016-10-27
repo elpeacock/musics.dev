@@ -16,9 +16,8 @@ class EventsController extends Controller
      */
     public function index()
     {
-          $data['events'] = Event::orderDesc(10);
-          $data['upcomingEvents'] = Event::upcomingEvents()->get();
-          return view ('events.index', $data);
+          
+          return view ('events.all');
     }
 
     /**
@@ -29,12 +28,12 @@ class EventsController extends Controller
     public function create()
     {
         session()->flash('fail', 'Your event was NOT created. Please fix errors.');
-        $this->validate($request, Event::$rules);
+        // $this->validate($request, Event::$rules);
 
-        $event->new Event();
-        $event->venue_id = $request->get('venue_id')
-        $event->date = $request->get('date');
-        $event
+        // $event->new Event();
+        // $event->venue_id = $request->get('venue_id')
+        // $event->date = $request->get('date');
+        // $event
         return view('events.create');
     }
 

@@ -8,12 +8,12 @@
 			{{ csrf_field() }}
 			<div class="form-group">
 				<input type="text" class="form-control" name="email" id="email" placeholder="email">
-				@include('forms.error', ['field' => 'email'])
+				{{-- @include('forms.error', ['field' => 'email']) --}}
 
 			</div>
 			<div class="form-group">
 				<input type="password" class="form-control" name="password" id="password" placeholder="password">
-				@include('forms.error', ['field' => 'password'])
+				{{-- @include('forms.error', ['field' => 'password']) --}}
 
 			</div>
 			<div class="form-group">
