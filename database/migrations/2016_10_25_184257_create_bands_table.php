@@ -16,7 +16,7 @@ class CreateBandsTable extends Migration
             
             $table->increments('id');
             $table->string('name');
-            $table->integer('genre_id')->unsigned();
+            $table->integer('genre_id')->unsigned()->unique();
             $table->integer('owner_id')->unsigned();
             $table->text('description');
             $table->string('image_url')->nullable();
