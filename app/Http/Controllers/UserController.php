@@ -15,12 +15,8 @@ class UserController extends Controller
     }
     public function show($id)
     {
-        $user = User::find($id);
-        if (!$user) {
-            abort(404);
-        }
-
-        return view('users.show', $data);
+        $data['users'] = \App\Band::findOrFail($id);
+        return view('user.show')->with($data);
     }
     public function edit($id)
     {

@@ -2,16 +2,14 @@
 
 @section('content')
 <div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<img class="img img-thumbnail" src="{{ $user->avatar }}" height="150" width="150">
-		</div>
-		<div class="col-xs-6">
-			<h2>{{ $user->user_name }} {{ $user->????() }}.</h2>
-			@if(Auth::check() && (Auth::user()->id == $user->id))
-			<div>
-				<a class="btn btn-default" href="{{ action('UserController@edit', $user->id) }}">Change your info</a>
-			</div>
-			@endif
-		</div>
-	</div>
+	<h1>{{Auth::user()->name}}</h1>
+	<h3>{{Auth::user()->email}}</h3>
+	{{-- @if(Auth::id() == $users->id)
+		<a href="{{action('UserController@edit', $users->id)}}"><button type="button" class="btn btn-warning">Edit <i class="fa fa-pencil"></i></button></a>
+	@endif --}}
+	<hr>
+
+	<h2>Events</h2>
+
+
+@stop
