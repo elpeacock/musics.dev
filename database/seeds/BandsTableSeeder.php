@@ -11,6 +11,6 @@ class BandsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::unprepared(file_get_contents('./database/sql/performers.sql'));
+        DB::unprepared(file_get_contents('./database/sql/bands.sql'));
     }
 }

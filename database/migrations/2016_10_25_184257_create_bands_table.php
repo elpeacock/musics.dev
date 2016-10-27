@@ -16,13 +16,12 @@ class CreateBandsTable extends Migration
             
             $table->increments('id');
             $table->string('name');
-            $table->integer('genre_id')->unsigned();
+            $table->integer('genre_id')->unsigned()->unique();
             $table->integer('owner_id')->unsigned();
             $table->text('description');
             $table->string('image_url')->nullable();
             $table->timestamps();
         });
-
         // Declare foreign keys
         Schema::table('bands', function (Blueprint $table) {
             
@@ -30,7 +29,6 @@ class CreateBandsTable extends Migration
             $table->foreign('owner_id')->references('id')->on('users');
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -42,9 +40,7 @@ class CreateBandsTable extends Migration
         Schema::table('bands', function (Blueprint $table) {
             $table->dropForeign('bands_genre_id_foreign');
             $table->dropForeign('bands_owner_id_foreign');
-
         });
-
         Schema::drop('bands');
     }
 }
