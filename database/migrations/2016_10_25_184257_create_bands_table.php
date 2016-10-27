@@ -15,8 +15,9 @@ class CreateBandsTable extends Migration
         Schema::create('bands', function (Blueprint $table) {
             
             $table->increments('id');
+            $table->integer('seeder_id');
             $table->string('name');
-            $table->integer('genre_id')->unsigned()->unique();
+            $table->integer('genre_id')->unsigned();
             $table->integer('owner_id')->unsigned();
             $table->text('description');
             $table->string('image_url')->nullable();

@@ -11,22 +11,7 @@
 # ************************************************************
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table all_performers
-# ------------------------------------------------------------
-
-LOCK TABLES `bands` WRITE;
-/*!40000 ALTER TABLE `all_performers` DISABLE KEYS */;
-
-INSERT INTO `bands` (`id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
+INSERT INTO `bands` (`seeder_id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
 VALUES
 	(4,'112',3,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(6,'3 Doors Down',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
@@ -2714,7 +2699,7 @@ VALUES
 	(8289,'Kingpen Slim',8,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(8291,'Joey Dee',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00');
 
-INSERT INTO `bands` (`id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
+INSERT INTO `bands` (`seeder_id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
 VALUES
 	(8294,'Ambrosia Parsley',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(8298,'Blues at Bethel Woods',12,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
@@ -3871,7 +3856,5 @@ VALUES
 	(11919,'Frank Fois',12,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(11920,'The Storytellers Band',8,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00');
 
-/*!40000 ALTER TABLE `bands` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
