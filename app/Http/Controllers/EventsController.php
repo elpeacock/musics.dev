@@ -16,7 +16,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-          
+
           return view ('events.all');
     }
 
@@ -27,14 +27,10 @@ class EventsController extends Controller
      */
     public function create()
     {
-        session()->flash('fail', 'Your event was NOT created. Please fix errors.');
-        // $this->validate($request, Event::$rules);
-
-        // $event->new Event();
-        // $event->venue_id = $request->get('venue_id')
-        // $event->date = $request->get('date');
-        // $event
-        return view('events.create');
+          if (!Auth::check()) {
+        		return view('auth.login');
+    		}
+    		return view('events.create', ['id' => $request->get('event_id')]);
     }
 
     /**
@@ -45,6 +41,21 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
+          session()->flash('fail', 'Your event was NOT created. Please fix errors.');
+          $this->validate($request, Event::$rules);
+          $event = new Event();
+          $event->band_id = $request->get('band_id');
+          $event->venue_id = $request->get('venue_id');
+          $event->time = $request->get('time');
+          $event->price = $request->get('price');
+          $event->description = $request->get('description');
+          $event->tickets = $request->get('tickets');
+
+
+          $event->created_by = Auth::user()->id;
+          $event->save();
+          session()->flash('success', 'Your event was created successfully!');
+          return redirect()->action('EventsController@show', $event->id);
 
     }
 
@@ -56,7 +67,14 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        return view('events.show');
+          $event = Event::find($id);
+          if (!$event) {
+            abort(404);
+          }
+          $data = [
+            'event' => $event
+          ];
+          return view('events.show', $data);
     }
 
     /**
@@ -89,7 +107,8 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
-      
+
+
     }
 
     /**

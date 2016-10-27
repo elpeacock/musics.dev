@@ -15,9 +15,13 @@ class Event extends Model
 	}
 	public static $rules =
 		[
-			'??????' => 'required|max:50',
-			'date' => 'required',
-			'content' => 'required|max:255'
+
+      'band' =>'required|max:255',
+      'venue' =>'required|max:255',
+      'time' =>'required',
+			'price' => 'required',
+			'description' => 'required|max:255',
+      'tickets' => 'required',
 		];
     public function user(){
         return $this->belongsTo(User::class, 'created_by');
@@ -32,3 +36,7 @@ class Event extends Model
         return $this->hasOne('App\Band', 'owner_id');
     }
 }
+@else
+    <div hidden>{!! redirect('auth/login') !!}</div>
+@endif
+@stop
