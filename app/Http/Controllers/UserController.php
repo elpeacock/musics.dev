@@ -80,16 +80,16 @@ class UserController extends Controller
 
     public function pickFavoriteBands(Request $request, $id) {
 
-        if(!Auth::check() || Auth::user()->id != $id) {
+        // if(!Auth::check() || Auth::user()->id != $id) {
 
-            return view('auth.login');
-        }
+        //     return view('auth.login');
+        // }
 
-        $user = User::find($id);
+        // $user = User::find($id);
 
-        $data = ['user' => $user];
+        // $data = ['user' => $user];
 
-        return view('user.favorites')->with($data);
+        return view('user.favorites');
     }
     public function destroy($id)
     {
