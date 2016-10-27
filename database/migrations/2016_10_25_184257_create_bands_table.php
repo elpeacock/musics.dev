@@ -19,7 +19,7 @@ class CreateBandsTable extends Migration
             $table->integer('genre_id')->unsigned();
             $table->integer('owner_id')->unsigned();
             $table->text('description');
-            $table->string('image_url');
+            $table->string('image_url')->nullable();
             $table->timestamps();
         });
 
