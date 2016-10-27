@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Event;
 
 class EventsController extends Controller
 {
@@ -30,7 +32,7 @@ class EventsController extends Controller
           if (!Auth::check()) {
         		return view('auth.login');
     		}
-    		return view('events.create', ['id' => $request->get('event_id')]);
+    		return view('events.create');
     }
 
     /**
@@ -44,15 +46,14 @@ class EventsController extends Controller
           session()->flash('fail', 'Your event was NOT created. Please fix errors.');
           $this->validate($request, Event::$rules);
           $event = new Event();
-          $event->band_id = $request->get('band_id');
-          $event->venue_id = $request->get('venue_id');
-          $event->time = $request->get('time');
+          $event->band_id = $request->get('band');
+          $event->venue_id = $request->get('venue');
+          $event->event_time = $request->get('time');
           $event->price = $request->get('price');
-          $event->description = $request->get('description');
-          $event->tickets = $request->get('tickets');
+          $event->buy_tickets = $request->get('tickets');
 
 
-          $event->created_by = Auth::user()->id;
+
           $event->save();
           session()->flash('success', 'Your event was created successfully!');
           return redirect()->action('EventsController@show', $event->id);

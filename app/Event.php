@@ -20,7 +20,6 @@ class Event extends Model
       'venue' =>'required|max:255',
       'time' =>'required',
 			'price' => 'required',
-			'description' => 'required|max:255',
       'tickets' => 'required',
 		];
     public function user(){
@@ -30,17 +29,12 @@ class Event extends Model
     {
     	$currentDate = Carbon::now();
     	return Event::where('date', '>=', $currentDate)->orderBy('date', 'asc');
-}
- public function events()
-    {
-        return $this->belongsToMany('App\User', 'rsvp', 'user_id', 'event_id');
+
     }
-	// public function band()
- //    {
- //        return $this->hasOne('App\Band', 'owner_id');
- //    }
+
+	public function band()
+    {
+        return $this->hasOne('App\Band', 'user_id');
+    }
+  protected $fillable = ['band_id', 'venue_id', 'price', 'event_time', 'buy_tickets'];
 }
-// @else
-//     <div hidden>{!! redirect('auth/login') !!}</div>
-// @endif
-// @stop
