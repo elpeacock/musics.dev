@@ -57,6 +57,7 @@
         
         <ul class="nav navbar-nav pull-right">
             
+     @if(Auth::check())
             <li class="dropdown">
                 
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
@@ -68,13 +69,13 @@
                     <li><a href="{{ action('EventsController@create') }}">Create An Event</a></li>
                     
                     <li class="divider"></li>
-                    
-                    <li><a href="#">Log Out</a></li>                 
+                    <li><a href="{{ action('Auth\AuthController@getLogout') }}">Log Out</a></li>  
                 </ul>
-            
+      @else      
             <li><a href="{{ action('Auth\AuthController@getRegister') }}">Sign Up</a></li>
             
             <li><a href="{{ action('Auth\AuthController@getLogin') }}">Log In</a></li>
+    @endif               
 
             <li><a href="{{ action('EventsController@index') }}">Events</a></li>
             
