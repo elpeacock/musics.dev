@@ -23,10 +23,10 @@
 # Dump of table all_performers
 # ------------------------------------------------------------
 
-LOCK TABLES `all_performers` WRITE;
+LOCK TABLES `bands` WRITE;
 /*!40000 ALTER TABLE `all_performers` DISABLE KEYS */;
 
-INSERT INTO `all_performers` (`id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
+INSERT INTO `bands` (`id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
 VALUES
 	(4,'112',3,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(6,'3 Doors Down',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
@@ -2714,7 +2714,7 @@ VALUES
 	(8289,'Kingpen Slim',8,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(8291,'Joey Dee',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00');
 
-INSERT INTO `all_performers` (`id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
+INSERT INTO `bands` (`id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
 VALUES
 	(8294,'Ambrosia Parsley',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(8298,'Blues at Bethel Woods',12,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
@@ -3871,109 +3871,7 @@ VALUES
 	(11919,'Frank Fois',12,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(11920,'The Storytellers Band',8,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00');
 
-/*!40000 ALTER TABLE `all_performers` ENABLE KEYS */;
+/*!40000 ALTER TABLE `bands` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
-# Dump of table bands
-# ------------------------------------------------------------
-
-
-
-# Dump of table events
-# ------------------------------------------------------------
-
-
-
-# Dump of table genres
-# ------------------------------------------------------------
-
-LOCK TABLES `genres` WRITE;
-/*!40000 ALTER TABLE `genres` DISABLE KEYS */;
-
-INSERT INTO `genres` (`id`, `name`, `created_at`, `updated_at`)
-VALUES
-	(3,'R&B/Urban Soul','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(5,'Rock & Pop','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(6,'Alternative Rock','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(8,'Rap & Hip Hop','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(9,'Country & Folk','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(12,'Jazz & Blues','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(16,'Hard Rock/Metal','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(18,'Dance/Electronic','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(73,'Alternative & Indie','0000-00-00 00:00:00','0000-00-00 00:00:00');
-
-/*!40000 ALTER TABLE `genres` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table migrations
-# ------------------------------------------------------------
-
-LOCK TABLES `migrations` WRITE;
-/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-
-INSERT INTO `migrations` (`migration`, `batch`)
-VALUES
-	('2014_10_12_100000_create_password_resets_table',1),
-	('2016_10_24_000000_create_users_table',1),
-	('2016_10_25_184219_create_genres_table',1),
-	('2016_10_25_184257_create_bands_table',1),
-	('2016_10_25_184320_create_venues_table',1),
-	('2016_10_25_184344_create_events_table',1),
-	('2016_10_25_184406_create_rsvps_table',1),
-	('2016_10_25_184439_create_user_genres_table',1),
-	('2016_10_25_184505_create_user_bands_table',1),
-	('2016_10_27_161317_create_all_performers_table',1);
-
-/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table password_resets
-# ------------------------------------------------------------
-
-
-
-# Dump of table rsvps
-# ------------------------------------------------------------
-
-
-
-# Dump of table user_bands
-# ------------------------------------------------------------
-
-
-
-# Dump of table user_genres
-# ------------------------------------------------------------
-
-
-
-# Dump of table users
-# ------------------------------------------------------------
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `zip_code`, `image_url`, `remember_token`, `created_at`, `updated_at`)
-VALUES
-	(1,'Alessandra Little','alize.rau@example.com','$2y$10$PuETXV9rvZI99bTe66ONC.8revB57oCqt8ar3mPFo/mKaJBQRTEoa',0,'','2MBGPvaAfO','2016-10-27 19:25:17','2016-10-27 19:25:17'),
-	(2,'Dr. Trycia Lakin II','ycremin@example.com','$2y$10$kh3t4y4UxKqk0U512ZXBIOXkisDfKcScTRWltWDvf8qmPD9aGHkem',0,'','s89JXp7anc','2016-10-27 19:25:17','2016-10-27 19:25:17');
-
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table venues
-# ------------------------------------------------------------
-
-
-
-
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
