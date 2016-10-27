@@ -31,14 +31,14 @@ class Event extends Model
     	$currentDate = Carbon::now();
     	return Event::where('date', '>=', $currentDate)->orderBy('date', 'asc');
 }
- public function events()
+ public function users()
     {
         return $this->belongsToMany('App\User', 'rsvp', 'user_id', 'event_id');
     }
-	// public function band()
- //    {
- //        return $this->hasOne('App\Band', 'owner_id');
- //    }
+	public function band()
+    {
+        return $this->hasOne('App\Band', 'band_id');
+    }
 }
 // @else
 //     <div hidden>{!! redirect('auth/login') !!}</div>
