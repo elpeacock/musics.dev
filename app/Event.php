@@ -30,13 +30,17 @@ class Event extends Model
     {
     	$currentDate = Carbon::now();
     	return Event::where('date', '>=', $currentDate)->orderBy('date', 'asc');
-
-	public function band()
-    {
-        return $this->hasOne('App\Band', 'owner_id');
-    }
 }
-@else
-    <div hidden>{!! redirect('auth/login') !!}</div>
-@endif
-@stop
+ public function events()
+    {
+        return $this->belongsToMany('App\User', 'rsvp', 'user_id', 'event_id');
+    }
+	// public function band()
+ //    {
+ //        return $this->hasOne('App\Band', 'owner_id');
+ //    }
+}
+// @else
+//     <div hidden>{!! redirect('auth/login') !!}</div>
+// @endif
+// @stop

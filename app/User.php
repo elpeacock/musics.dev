@@ -61,7 +61,7 @@ CanResetPasswordContract
 
     public function events()
     {
-        return $this->hasMany(Event::class, 'created_by');
+        return $this->belongsToMany('App\Event', 'rsvp', 'user_id', 'event_id');
     }
     
     public function bands()
