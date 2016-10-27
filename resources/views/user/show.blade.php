@@ -9,17 +9,12 @@
 	@endif --}}
 	<hr>
 
-	<h2>Events</h2>
-
-
-
+	<h1>Events</h1>
 	@foreach($user->events as $event)
 		<h3>{{$event->band->name}}</h3>
-		<h4>{{$event->venue_id}}</h4>
-		<h4>{{$event->event_time}}</h4>
-		<h4>{{$event->price}}</h4>
-		<?php 
-		var_dump($event);
-	?>
+		<h4>Location: {{$event->venue->name}}</h4>
+		<h4>Data: {{$event->event_time}}</h4>
+		<h4>Ticket Price: ${{$event->price}}</h4>
+		<hr>
 	@endforeach
 @stop
