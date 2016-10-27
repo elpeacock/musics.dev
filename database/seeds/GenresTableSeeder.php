@@ -11,12 +11,6 @@ class GenresTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('genres')->insert([
-        	'name' => 'rock',
-    	]);
-
-    	DB::table('genres')->insert([
-    		'name' => 'country',
-		]);
+        DB::unprepared(file_get_contents('./database/sql/genres.sql'));
     }
 }

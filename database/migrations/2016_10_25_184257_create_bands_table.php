@@ -16,7 +16,7 @@ class CreateBandsTable extends Migration
             
             $table->increments('id');
             $table->string('name');
-            // $table->integer('genre_id')->unsigned();
+            $table->integer('genre_id')->unsigned();
             $table->integer('owner_id')->unsigned();
             $table->text('description');
             $table->string('image_url');
@@ -26,7 +26,7 @@ class CreateBandsTable extends Migration
         // Declare foreign keys
         Schema::table('bands', function (Blueprint $table) {
             
-            // $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreign('genre_id')->references('id')->on('genres');
             $table->foreign('owner_id')->references('id')->on('users');
         });
     }
