@@ -16,8 +16,8 @@ class EventsController extends Controller
      */
     public function index()
     {
-        // return 'hello';
-        return view('events.all');
+          
+          return view ('events.all');
     }
 
     /**
@@ -27,6 +27,13 @@ class EventsController extends Controller
      */
     public function create()
     {
+        session()->flash('fail', 'Your event was NOT created. Please fix errors.');
+        // $this->validate($request, Event::$rules);
+
+        // $event->new Event();
+        // $event->venue_id = $request->get('venue_id')
+        // $event->date = $request->get('date');
+        // $event
         return view('events.create');
     }
 
@@ -38,7 +45,7 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -60,8 +67,17 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        return view('events.edit');
-
+              if (!Auth::check()) {
+            return view('auth.login');
+          }
+          $event = Event::find($id);
+          if (!$event) {
+            abort(404);
+          }
+          $data = [
+            'event' => $event
+          ];
+          return view('events.edit', $data);
     }
 
     /**
@@ -73,7 +89,7 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      
     }
 
     /**
@@ -84,6 +100,13 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        //
+            $event = Event::find($id);
+      		if (!$event) {
+      			abort(404);
+      		}
+      		$event->delete();
+      		$request->session()->flash('success', 'Your event was deleted successfully!');
+      		return redirect()->action('EventsController@index');
+
     }
 }

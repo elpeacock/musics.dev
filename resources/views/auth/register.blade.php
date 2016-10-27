@@ -7,7 +7,7 @@
 
         <h2>Create a new account</h2>
 
-        <form method="POST" action="{{ action('Auth\AuthController@postRegister') }}">
+        <form method="POST" action="/auth/register">
 
             {{ csrf_field() }}
 
@@ -18,7 +18,7 @@
                 class="form-control"
                 name="name"
                 id="name"
-                placeholder="first + last name">
+                placeholder="Name">
                 {{-- @include('forms.error', ['field' => 'name']) --}}
 
             </div>
@@ -31,6 +31,18 @@
                 name="email"
                 id="email"
                 placeholder="Email">
+                {{-- @include('forms.error', ['field' => 'email']) --}}
+
+            </div>
+
+            <div class="form-group">
+
+                <input
+                type="text"
+                class="form-control"
+                name="zip_code"
+                id="zip_code"
+                placeholder="Zip">
                 {{-- @include('forms.error', ['field' => 'email']) --}}
 
             </div>
