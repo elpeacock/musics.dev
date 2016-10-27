@@ -16,7 +16,8 @@ class BandsController extends Controller
      */
     public function index()
     {
-        return view('bands.index');
+        $data['bands'] = \App\Band::paginate(12);
+        return view('bands.index')->with($data);
     }
 
     /**
@@ -48,7 +49,8 @@ class BandsController extends Controller
      */
     public function show($id)
     {
-        return view('bands.show');
+        $data['bands'] = \App\Band::findOrFail($id);
+        return view('bands.show') ->with($data);
     }
 
     /**
