@@ -12,7 +12,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="fb-profile-text">
-              <h1>{{$events->band->name}}</h1>
+              <h1>{{$events->band[0]->name}}</h1>
               <h4><strong>Venue:</strong> {{$events->venue->name}}</h4>
               <h4><strong>Ticket Info:</strong> {{$events->buy_tickets}}</h4>
               <h4><strong>Address:</strong> {{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}}, {{$events->venue->zip_code}}</h4>
@@ -119,7 +119,7 @@ $(function($img) {
         };
 
         $.ajax({
-            url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q={{$events->band->name}}" + $.param(params),
+            url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q={{$events->band[0]->name}}" + $.param(params),
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type","multipart/form-data");
