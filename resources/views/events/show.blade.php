@@ -8,9 +8,9 @@
 
         {{-- <img class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/> --}}
         
-        <div class="col-lg-4"><div class="bandContainer"><div class="bandImg" id="image"></div></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><div class="bandContainer"><div class="bandImg" id="image"></div></div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="fb-profile-text">
               <h1>{{$events->band->name}}</h1>
               <h4><strong>Venue:</strong> {{$events->venue->name}}</h4>
@@ -113,11 +113,7 @@ var renderMap = function (address, mapOptions){
       }//end of function
 renderMap(address, mapOptions);
 
-})();
-    </script>
-
-    <script type="text/javascript">
-    $(function() {
+$(function($img) {
         var params = {
             // Request parameters
         };
@@ -147,7 +143,9 @@ renderMap(address, mapOptions);
             // alert("error");
         });
     });
-</script>
+
+})();
+    </script>
 
 
 @stop
