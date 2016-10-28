@@ -149,4 +149,22 @@ class EventsController extends Controller
 
     }
 
+    public function rsvp(Request $request)
+    {
+        $vote = Vote::firstOrCreate(
+                array(
+                        'user_id' => $request->user()->id,
+                        'post_id' => $request->get('postId'),
+                    )
+            );
+        if ($request->get('voteValue') == 1){
+            $vote->vote = 1;
+        } else if ($request->get('voteValue') == 0){
+            $vote->vote = 0;
+        }
+        
+        $vote->save();
+        return redirect()->action('PostsController@index');
+    }
+
 }

@@ -39,6 +39,10 @@ class Event extends Model
     {
         return $this->hasOne('App\Venue', 'id');
     }
+    public function rsvp()
+    {
+        return $this->hasMany('App\Event', 'id');
+    }
 
   // protected $fillable = ['band_id', 'venue_id', 'price', 'event_time', 'buy_tickets'];
 

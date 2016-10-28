@@ -16,9 +16,9 @@ Route::get('/', function () {
     return view('events.index')->with($data);
 });
 Route::resource('user', 'UserController');
-Route::get('/{user}/favorites', 'UserController@pickFavoriteBands');
 Route::resource('events', 'EventsController');
 Route::resource('bands', 'BandsController');
+Route::resource('rsvp', 'RsvpController');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -28,3 +28,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+//Custom routes...
+Route::get('/{user}/favorites', 'UserController@pickFavoriteBands');
+Route::post('/{user}/favorites', 'UserController@storeUserFavorites');

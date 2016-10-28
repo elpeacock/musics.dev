@@ -34,7 +34,8 @@ class UserController extends Controller
         return view('users.edit', $data);
     }
     public function update(Request $request, $id)
-    {
+    {   
+        dd($user->id);
         if (!Auth::check()) {
             return view('auth.login');
         }
@@ -42,8 +43,10 @@ class UserController extends Controller
         if (!$user) {
             abort(404);
         }
+
         $user->first_name = $request->input('user_name');
         $user->email = $request->input('email');
+        $user->image_url = $request->input('image_url');
 
         $user->save();
         session()->flash('success', 'Your information was updated successfully!');
@@ -75,7 +78,7 @@ class UserController extends Controller
         return redirect()->action('UserController@show', $user->id);
     }
 
-    public function pickFavoriteBands(Request $request, $id) {
+    public function pickFavoriteBands($id) {
 
         if(!Auth::check()) {
 
@@ -115,6 +118,17 @@ class UserController extends Controller
                 ];
 
         return view('user.favorites')->with($data);
+    }
+
+    public function storeUserFavorites (Request $request, $id)
+    {
+        $user = Auth::user();
+
+        $band_id = $request->input('band_id');
+
+        $user->bandPreferences()->attach($band_id);
+
+        dd($request);
     }
 
     public function destroy($id)
