@@ -19,8 +19,8 @@ class EventsController extends Controller
      */
     public function index()
     {
-
-          return view ('events.all');
+          $data['events'] = \App\Event::paginate(15);
+          return view ('events.all')->with($data);
     }
 
     /**
@@ -73,6 +73,7 @@ class EventsController extends Controller
     public function show($id)
     {
           $event = Event::find($id);
+          $venue = Event::find($id);
           if (!$event) {
             abort(404);
           }
@@ -82,7 +83,9 @@ class EventsController extends Controller
           $data = [
             'venue' => $venue
           ];
-          return view('events.show', $data);
+
+          $data['events'] = \App\Event::findOrFail($id);
+          return view('events.show')->with($data);
     }
 
     /**
