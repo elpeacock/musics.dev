@@ -19,6 +19,7 @@ Route::resource('user', 'UserController');
 Route::get('/{user}/favorites', 'UserController@pickFavoriteBands');
 Route::resource('events', 'EventsController');
 Route::resource('bands', 'BandsController');
+Route::resource('rsvp', 'RsvpController');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
