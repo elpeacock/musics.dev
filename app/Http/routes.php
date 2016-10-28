@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::resource('user', 'UserController');
 Route::resource('events', 'EventsController');
 Route::resource('bands', 'BandsController');
+Route::resource('rsvp', 'RsvpController');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
