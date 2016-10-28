@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Event;
 use App\Band;
+use App\Venue;
 
 class EventsController extends Controller
 {
@@ -34,6 +35,7 @@ class EventsController extends Controller
         		return view('auth.login');
     		}
         $bands = Band::all();
+        $venue = Venue::all();
 
     		return view('events.create')->with('bands',$bands);
 
@@ -102,6 +104,9 @@ class EventsController extends Controller
           }
           $data = [
             'event' => $event
+          ];
+          $data = [
+            'venue' => $venue
           ];
           return view('events.edit', $data);
     }

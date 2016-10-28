@@ -20,7 +20,7 @@
             <p>123 Ocean AVE, San Antonio, Texas</p>
         </div>
     </div>
-</div> <!-- /container -->  
+</div> <!-- /container -->
 <div class="container">
     <div id="map-canvas"></div>
 </div>
@@ -31,7 +31,7 @@
 <script type="text/javascript">
     (function() {
     "use strict";
-        //places content in divs for three days 
+        //places content in divs for three days
         // Set our map options
         var mapOptions = {
             // Set the zoom level
@@ -67,7 +67,7 @@ var address = "2410 N St Mary's St, San Antonio, TX 78212";
 
 // });
 
-var renderMap = function (address, mapOptions){ 
+var renderMap = function (address, mapOptions){
         // Init geocoder object
         var geocoder = new google.maps.Geocoder();
         // Geocode our address
