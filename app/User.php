@@ -68,5 +68,6 @@ CanResetPasswordContract
     {
         return $this->hasMany('App\Band', 'owner_id');
     }
+
 }
     
