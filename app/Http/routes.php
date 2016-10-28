@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('events.index');
+	$data['events'] = \App\Event::paginate(15);
+    return view('events.index')->with($data);
 });
 Route::resource('user', 'UserController');
 Route::get('/{user}/favorites', 'UserController@pickFavoriteBands');
