@@ -38,12 +38,15 @@ class RsvpController extends Controller
      */
     public function store(Request $request)
     {
-        $rsvp = new Rsvp();
-        $rsvp->event_id = $request->get('event_id');
-        $rsvp->user_id = $request->get('user_id');
 
-        $rsvp->save();
-        return redirect()->action('EventsController@index');
+        // $rsvp = new Rsvp();
+        // $rsvp->event_id = $request->get('event_id');
+        // $rsvp->user_id = $request->get('user_id');
+
+        $rsvp = Rsvp::updateOrCreate(
+            ['event_id' => $request->get('event_id'), 'user_id' => $request->get('user_id')]
+        );
+        return redirect()->action('EventsController@show', $request->get('event_id'));
     }
 
     /**
