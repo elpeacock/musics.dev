@@ -15,7 +15,7 @@ class Event extends Model
 	}
 	public static $rules =
 		[
-      'band' =>'required',
+      'band' =>'required|',
       'venue' =>'required',
       'time' =>'required',
 			'price' => 'require',
@@ -30,12 +30,12 @@ class Event extends Model
     	return Event::where('date', '>=', $currentDate)->orderBy('date', 'asc');
     }
 
-
+}
 	public function band()
     {
         return $this->hasMany('App\Band', 'id');
     }
-    public function venue()
+  public function venue()
     {
         return $this->hasOne('App\Venue', 'id');
     }
