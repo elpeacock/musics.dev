@@ -10,9 +10,9 @@
 
         <div class="fb-profile-text">
             <h1>{{$events->band->name}}</h1>
-            <h4><strong>Location:</strong> {{$events->venue->name}}</h4>
+            <h4><strong>Venue:</strong> {{$events->venue->name}}</h4>
             <h4><strong>Ticket Info:</strong> {{$events->buy_tickets}}</h4>
-            <h4>{{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}}, {{$events->venue->zip_code}}</h4>
+            <h4><strong>Address:</strong> {{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}}, {{$events->venue->zip_code}}</h4>
             <h4><strong>Description:</strong> {{$events->venue->description}}</h4>
         </div>
     </div>
