@@ -7,7 +7,7 @@
     <div class="fb-profile">
 
         {{-- <img class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/> --}}
-        
+
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><div class="bandContainer"><div class="bandImg" id="image"></div></div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -20,7 +20,7 @@
           </div>
         </div>
     </div>
-</div> <!-- /container -->  
+</div> <!-- /container -->
 <div class="container">
     <div id="map-canvas"></div>
 </div>
@@ -31,7 +31,7 @@
 <script type="text/javascript">
     (function() {
     "use strict";
-        //places content in divs for three days 
+        //places content in divs for three days
         // Set our map options
         var mapOptions = {
             // Set the zoom level
@@ -67,7 +67,7 @@ var address = "{{$events->venue->address}}, {{$events->venue->city}}, {{$events-
 
 // });
 
-var renderMap = function (address, mapOptions){ 
+var renderMap = function (address, mapOptions){
         // Init geocoder object
         var geocoder = new google.maps.Geocoder();
         // Geocode our address
@@ -117,7 +117,7 @@ $(function($img) {
         var params = {
             // Request parameters
         };
-      
+
         $.ajax({
             url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q={{$events->band->name}}" + $.param(params),
             beforeSend: function(xhrObj){
@@ -133,7 +133,7 @@ $(function($img) {
           console.log(data);
           console.log(data.value[0].webSearchUrl);
           $img = data.value[0].contentUrl
-          var imageSpace = "" 
+          var imageSpace = ""
            imageSpace += "<img src=" + $img +">"
         $(".bandImg").html(imageSpace);
 
