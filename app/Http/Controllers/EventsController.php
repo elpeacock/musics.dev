@@ -79,6 +79,9 @@ class EventsController extends Controller
           $data = [
             'event' => $event
           ];
+          $data = [
+            'venue' => $venue
+          ];
           return view('events.show', $data);
     }
 
