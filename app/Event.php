@@ -15,7 +15,6 @@ class Event extends Model
 	}
 	public static $rules =
 		[
-
       'band' =>'required|max:255',
       'venue' =>'required|max:255',
       'time' =>'required',
@@ -29,6 +28,7 @@ class Event extends Model
     {
     	$currentDate = Carbon::now();
     	return Event::where('date', '>=', $currentDate)->orderBy('date', 'asc');
+    }
 
 }
 	public function band()

@@ -10,15 +10,16 @@
 			{{ csrf_field() }}
 			<div class="form-group">
 				<select>
-					@foreach ($variable as $key => $value)
-						<option></option>
+				@foreach ($bands as $band_id => $value)
+					<option value="{{ $band_id }}">{{ $value->name }}</option>
+				@endforeach
+			</select>
+				<input type="submit" value="Submit">
 
-					@endforeach
-				</select>
 				//include('forms.error', ['field' => 'band'])
 			</div>
 			<div class="form-group">
-				<input type="text" class="form-control" name="venue" id="venue" placeholder="Venue">
+
 				//include('forms.error', ['field' => 'venue'])
 			</div>
 			<div class="form-group">
