@@ -18,7 +18,7 @@ class Event extends Model
       'band' =>'required|',
       'venue' =>'required',
       'time' =>'required',
-			'price' => 'require',
+			// 'price' => 'required',
       'tickets' => 'required',
 		];
     public function user(){
@@ -30,7 +30,7 @@ class Event extends Model
     	return Event::where('date', '>=', $currentDate)->orderBy('date', 'asc');
     }
 
-}
+
 	public function band()
     {
         return $this->hasMany('App\Band', 'id');
