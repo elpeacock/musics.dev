@@ -15,10 +15,10 @@ class Event extends Model
 	}
 	public static $rules =
 		[
-      'band' =>'required',
+      'band' =>'required|',
       'venue' =>'required',
       'time' =>'required',
-			'price' => 'require',
+			// 'price' => 'required',
       'tickets' => 'required',
 		];
     public function user(){
@@ -35,7 +35,7 @@ class Event extends Model
     {
         return $this->hasMany('App\Band', 'id');
     }
-    public function venue()
+  public function venue()
     {
         return $this->hasOne('App\Venue', 'id');
     }
