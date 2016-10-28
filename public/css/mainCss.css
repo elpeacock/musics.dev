@@ -117,7 +117,20 @@
   padding-left: 0px;
 }*/
 
+/*show band Img*/
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
 
+.bandContainer{
+    height: 100%;
+}
+#image{
+    width: 290px;
+    margin: 0px;
+    float: left;
+}
 
 /*Footer*/
 

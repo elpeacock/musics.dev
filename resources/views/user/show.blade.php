@@ -11,7 +11,7 @@
 
 	<h1>Events</h1>
 	@foreach($user->events as $event)
-		<h3>{{$event->band->name}}</h3>
+		<a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
 		<h4>Location: {{$event->venue->name}}</h4>
 		<h4>Date: {{$event->event_time}}</h4>
 		<h4>Ticket Price: ${{$event->price}}</h4>

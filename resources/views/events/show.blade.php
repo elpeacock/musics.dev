@@ -5,19 +5,19 @@
 @section('content')
 <div class="container">
     <div class="fb-profile">
-        <img align="left" class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/>
-{{--         <img align="left" class="fb-image-profile thumbnail" src="http://placekitten.com/150/150" alt="Profile image example"/> --}}
-        <div class="fb-profile-text">
-            <h1>Band/Show Event</h1>
-            <h4>Description</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <h4>Location</h4>
-            <p>123 Ocean AVE, San Antonio, Texas</p>
+
+        {{-- <img class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/> --}}
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><div class="bandContainer"><div class="bandImg" id="image"></div></div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="fb-profile-text">
+              <h1>{{$events->band->name}}</h1>
+              <h4><strong>Venue:</strong> {{$events->venue->name}}</h4>
+              <h4><strong>Ticket Info:</strong> {{$events->buy_tickets}}</h4>
+              <h4><strong>Address:</strong> {{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}}, {{$events->venue->zip_code}}</h4>
+              <h4><strong>Description:</strong> {{$events->venue->description}}</h4>
+          </div>
         </div>
     </div>
 </div> <!-- /container -->
@@ -46,7 +46,7 @@
 
         var geocoder = new google.maps.Geocoder();
 // Set our address to geocode
-var address = "2410 N St Mary's St, San Antonio, TX 78212";
+var address = "{{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}} {{$events->venue->zip_code}}";
 
 // // Init geocoder object
 // var geocoder = new google.maps.Geocoder();
@@ -113,7 +113,39 @@ var renderMap = function (address, mapOptions){
       }//end of function
 renderMap(address, mapOptions);
 
+$(function($img) {
+        var params = {
+            // Request parameters
+        };
+
+        $.ajax({
+            url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q={{$events->band->name}}" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Content-Type","multipart/form-data");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","230e87a2adcf434ba83a30ea5b633f2f");
+            },
+            type: "POST",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+          console.log(data);
+          console.log(data.value[0].webSearchUrl);
+          $img = data.value[0].contentUrl
+          var imageSpace = ""
+           imageSpace += "<img src=" + $img +">"
+        $(".bandImg").html(imageSpace);
+
+            // alert("success");
+        })
+        .fail(function() {
+            // alert("error");
+        });
+    });
+
 })();
     </script>
+
 
 @stop
