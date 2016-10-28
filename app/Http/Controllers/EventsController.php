@@ -11,6 +11,7 @@ use App\Event;
 use App\Band;
 use App\Venue;
 
+
 class EventsController extends Controller
 {
     /**
