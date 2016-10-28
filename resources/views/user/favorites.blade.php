@@ -33,6 +33,8 @@ Faves and more...
 
         </div>
 
+    </form>
+    
         <div class="col-sm-4">
 
             <div class="dropdown">
@@ -59,6 +61,5 @@ Faves and more...
             
         </div>
         
-        </form>
 
 </div>
