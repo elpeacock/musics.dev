@@ -16,7 +16,7 @@ class Band extends Model
 
     public function usersFavorites()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User', 'user_bands', 'band_id', 'user_id');
     }
 
 }

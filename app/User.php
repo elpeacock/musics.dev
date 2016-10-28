@@ -71,7 +71,7 @@ CanResetPasswordContract
 
     public function bandPreferences()
     {
-        return $this->belongsToMany('App\Band');
+        return $this->belongsToMany('App\Band', 'user_bands', 'user_id', 'band_id');
     }
 
 }
