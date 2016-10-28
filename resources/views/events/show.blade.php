@@ -6,14 +6,18 @@
 <div class="container">
     <div class="fb-profile">
 
-        <img class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/>
-
-        <div class="fb-profile-text">
-            <h1>{{$events->band->name}}</h1>
-            <h4><strong>Venue:</strong> {{$events->venue->name}}</h4>
-            <h4><strong>Ticket Info:</strong> {{$events->buy_tickets}}</h4>
-            <h4><strong>Address:</strong> {{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}}, {{$events->venue->zip_code}}</h4>
-            <h4><strong>Description:</strong> {{$events->venue->description}}</h4>
+        {{-- <img class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/> --}}
+        
+        <div class="col-lg-4"><div class="bandContainer"><div class="bandImg" id="image"></div></div>
+        </div>
+        <div class="col-lg-6">
+          <div class="fb-profile-text">
+              <h1>{{$events->band->name}}</h1>
+              <h4><strong>Venue:</strong> {{$events->venue->name}}</h4>
+              <h4><strong>Ticket Info:</strong> {{$events->buy_tickets}}</h4>
+              <h4><strong>Address:</strong> {{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}}, {{$events->venue->zip_code}}</h4>
+              <h4><strong>Description:</strong> {{$events->venue->description}}</h4>
+          </div>
         </div>
     </div>
 </div> <!-- /container -->  
@@ -111,5 +115,39 @@ renderMap(address, mapOptions);
 
 })();
     </script>
+
+    <script type="text/javascript">
+    $(function() {
+        var params = {
+            // Request parameters
+        };
+      
+        $.ajax({
+            url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q={{$events->band->name}}" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Content-Type","multipart/form-data");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","230e87a2adcf434ba83a30ea5b633f2f");
+            },
+            type: "POST",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+          console.log(data);
+          console.log(data.value[0].webSearchUrl);
+          $img = data.value[0].contentUrl
+          var imageSpace = "" 
+           imageSpace += "<img src=" + $img +">"
+        $(".bandImg").html(imageSpace);
+
+            // alert("success");
+        })
+        .fail(function() {
+            // alert("error");
+        });
+    });
+</script>
+
 
 @stop
