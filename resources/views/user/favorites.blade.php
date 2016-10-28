@@ -15,21 +15,7 @@ Faves and more...
         {{ method_field('PUT') }}
 
 
-        <div class="col-md-8 col-sm-8 col-xs-8 col-sm-offset-2 col-xs-offset-2">
-
-        <div class="form-group">
-
-            <label for="zip_code" class="form-control">Where do you show up?</label>
-
-            <input
-                
-                type="text"
-                class="form-control"
-                name="zip_code"
-                placeholder="Zip code"
-                value="{{ $user->zip_code }}">
-
-        </div>
+        <div class="col-sm-8 col-sm-offset-2">
 
         <div class="form-group">
 
@@ -45,6 +31,32 @@ Faves and more...
 
         </div>
 
+        </div>
+
+        <div class="col-sm-4">
+
+            <div class="dropdown">
+
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+
+                    R&B/Urban Soul
+
+                    <span class="caret"></span>
+
+                </button>
+
+                <select class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                    @foreach($soulBands as $soulBand)
+
+                    <option>{{ $soulBand->name }}</option>
+
+                    @endforeach
+
+                </select>
+
+            </div>
+            
         </div>
         
         </form>
