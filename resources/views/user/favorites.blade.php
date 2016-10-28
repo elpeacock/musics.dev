@@ -44,7 +44,13 @@ Faves and more...
 
                 <option>{{ $soulBand->name }}</option>
 
+<<<<<<< HEAD
                 @endforeach
+=======
+    </form>
+    
+        <div class="col-sm-4">
+>>>>>>> d0d5a09513521d12845c0606ebfa82646182edb1
 
             </select>
 
