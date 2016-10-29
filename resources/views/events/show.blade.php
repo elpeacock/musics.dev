@@ -3,12 +3,12 @@
 @section('title', 'Show')
 
 @section('content')
-<div class="container">
+<div class="container" id="BandShowImage">
     <div class="fb-profile">
 
         {{-- <img class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/> --}}
 
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><div class="bandContainer"><div class="bandImg" id="image"></div></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><div class="bandContainer"><div class="bandImg" id=""></div></div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="fb-profile-text">
