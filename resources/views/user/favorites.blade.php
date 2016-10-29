@@ -168,10 +168,4 @@ Faves and more...
 
 </div>
 
-<script type="text/javascript">
-
-    var selectedValues = $('#selectedPreferences').val();
-
-</script>
-
 @stop
