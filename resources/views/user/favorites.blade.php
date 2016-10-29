@@ -9,81 +9,163 @@ Faves and more...
 @section('content')
 
 <div class="container">
-
     
-    <div class="col-sm-4">
-
-        <form method="POST" action="{{ action('UserController@storeUserFavorites') }}">
+    <form class="form" method="POST" action="{{ action('UserController@storeUserFavorites') }}">
 
         {{ csrf_field() }}
 
-            <select name="band_id" multiple>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-            </select>
-            <button>submit</button>
-        </form>
-
-        {{-- <div class="dropdown">
-
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-
-                R&B/Urban Soul
-
-                <span class="caret"></span>
-
-            </button>
-
-            <select class="dropdown-menu" aria-labelledby="dropdownMenu1">
-
-                @foreach($soulBands as $soulBand)
-
-                <option>{{ $soulBand->name }}</option>
-
-<<<<<<< HEAD
-                @endforeach
-=======
-    </form>
-    
         <div class="col-sm-4">
->>>>>>> d0d5a09513521d12845c0606ebfa82646182edb1
 
+            <h3>R&B/Soul</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($soulBands as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
             </select>
 
-        </div> --}}
-        
-        
+        </div>
+
+        <div class="col-sm-4">
+
+            <h3>Rock & Pop</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($rockPopBands as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
+            </select>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <h3>Alt Rock</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($altRockBands as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
+            </select>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <h3>Rap/Hip Hop</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($rapHipHop as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
+            </select>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <h3>Country/Folk</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($countryFolk as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
+            </select>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <h3>Jazz & Blues</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($jazzBlues as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
+            </select>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <h3>Hard Rock/Metal</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($hardRockMetal as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
+            </select>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <h3>Dance/Electronic</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($danceElectronic as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
+            </select>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <h3>Alternative/Indie</h3>
+
+            <select class="selectpicker" multiple data-selected-text-format="count">
+
+            @foreach($alternativeIndie as $band_id => $value)
+
+                <option name="band_id" id="selectedPreferences"value="{{ $band_id }}">{{ $value->name }}</option>
+
+            @endforeach
+            
+            </select>
+
+        </div>
+
+        <div class='button-holder'>
+            
+            <input type="submit" class="btn button-submit">
+
+        </div>
+
     </form>
-    </div>
 
 </div>
-    {{-- <form method="POST" action="{{ action('UserController@update', $user->id) }}" enctype="multipart/form-data">
 
-        {{ csrf_field() }}
-        {{ method_field('PUT') }}
-
-
-        <div class="col-sm-8 col-sm-offset-2">
-
-        <div class="form-group">
-
-            <label for="image_url" class="form-control">Add a picture</label>
-
-            <input
-                
-                type="text"
-                enctype="multipart/form-data"
-                class="form-control"
-                name="image_url"
-                placeholder=".jpg, .jpeg, .png"
-                value="{{ $user->image_url }}">
-
-        </div>
-
-        </div>
-
-    </form> --}}
+@stop

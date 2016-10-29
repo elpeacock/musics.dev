@@ -210,15 +210,8 @@ footer ul {
 	padding-top: 7px;
 }
 
-/* dropdown */
-.styled-select select {
-   background: transparent;
-   width: 268px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   }
+/*favorites page*/
+
+.button-holder {
+    text-align: center;
+}
