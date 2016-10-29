@@ -124,9 +124,13 @@ class UserController extends Controller
     {
         $user = Auth::user();
 
-        $band_id = $request->input('band_id');
+        $band_ids = $request->input('selectedValues');
 
-        $user->bandPreferences()->attach($band_id);
+        foreach($band_ids as $band_id) {
+
+            $user->bandPreferences()->attach($band_id);
+
+        }
 
         dd($request);
     }
