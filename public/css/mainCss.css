@@ -210,6 +210,7 @@ footer ul {
 	padding-top: 7px;
 }
 
+<<<<<<< HEAD
 
 #wrapper, html, body{
 	height:100%;
@@ -224,3 +225,10 @@ footer ul {
 
 
 /* dropdown */
+=======
+/*favorites page*/
+
+.button-holder {
+    text-align: center;
+}
+>>>>>>> 1f793b9b32aa5c6db68d807f3643d32d09156ce8
