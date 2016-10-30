@@ -210,4 +210,17 @@ footer ul {
 	padding-top: 7px;
 }
 
+
+#wrapper, html, body{
+	height:100%;
+}
+#wrapper{
+	margin-bottom:-190px;
+}
+#push{
+	height:110px;
+	clear: both;
+}
+
+
 /* dropdown */
