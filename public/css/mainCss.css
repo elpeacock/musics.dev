@@ -131,9 +131,6 @@ img {
     margin: 0px;
     float: left;
 }
-#BandShowImage{
-    padding-left: 0px;
-}
 
 /*Footer*/
 
@@ -210,8 +207,15 @@ footer ul {
 	padding-top: 7px;
 }
 
-/*favorites page*/
-
-.button-holder {
-    text-align: center;
+#wrapper, html, body{
+	height:100%;
 }
+#wrapper{
+	margin-bottom:-190px;
+}
+#push{
+	height:110px;
+	clear: both;
+}
+
+/* dropdown */
