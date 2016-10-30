@@ -33,11 +33,11 @@ class Event extends Model
 
 	public function band()
     {
-        return $this->hasMany('App\Band', 'id');
+        return $this->belongsTo('App\Band');
     }
   public function venue()
     {
-        return $this->hasOne('App\Venue', 'id');
+        return $this->belongsTo('App\Venue');
     }
     public function rsvp()
     {
