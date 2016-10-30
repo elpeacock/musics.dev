@@ -126,12 +126,6 @@ class UserController extends Controller
 
         $band_ids = $request->input('selectedValues');
 
-        foreach($band_ids as $band_id) {
-
-            $user->bandPreferences()->attach($band_id);
-
-        }
-
         dd($request);
     }
 
