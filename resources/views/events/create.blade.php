@@ -13,21 +13,20 @@
 			{{ csrf_field() }}
 			<div class="form-group">
 				<h4 class="modal-title">Add band/bands</h4>
-				<select>
-									@foreach ($bands as $band_id => $value)
-								<option value="{{ $band_id }}">{{ $value->name }}</option>
-									@endforeach
+				<select name="band">
+							@foreach ($bands as $band)
+								<option value="{{ $band->id }}">{{ $band->name }}</option>
+							@endforeach
 			</select>
-							<input type="submit" value="Submit">
 			</div>
+
 			<div class="form-group">
 					<h4 class="modal-title">Add a venue</h4>
-			<select>
-									@foreach ($venue as $venue_id => $value)
-								<option value="{{ $venue_id }}">{{ $value->name }}</option>
-									@endforeach
-			</select>
-					<input type="submit" value="Submit">
+					<select name="venue">
+							@foreach ($venues as $venue)
+								<option value="{{ $venue->id }}">{{ $venue->name }}</option>
+							@endforeach
+					</select>
 			</div>
 
 			<div class="form-group">
@@ -42,13 +41,8 @@
 
 			<div class="form-group">
 				<h4 class="modal-title">Ticket URL</h4>
-				<input type="text" class="form-control" name="" id="tickets" placeholder="ticket URL">
+				<input type="text" class="form-control" name="buy_tickets" id="tickets" placeholder="ticket URL">
 			</div>
-			{{-- <div class="form-group">
-				<h4 class="modal-title">Add Ticket URL here</h4>
-				<input type="text" class="form-control" name="tickets" id="tickets" placeholder="Ticket Purchase Location">
-
-			</div> --}}
 
 			<button type="submit" class ="btn btn-primary pull-right">Create</button>
 		</form>
