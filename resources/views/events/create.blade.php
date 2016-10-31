@@ -7,7 +7,7 @@
 	<div class="col-xs-3">
 		{{-- <img class="img img-thumbnail" src="{{ $user-> }}" height="150" width="150"> --}}
 	</div>
-	<div class="col-xs-6 col-xs-offset-3">
+		<div class="container">
 		<h2 class="modal-title">Create Event</h2>
 		<form method="POST" action="{{ action('EventsController@store') }}" enctype="multipart/form-data">
 			{{ csrf_field() }}
@@ -46,6 +46,6 @@
 
 			<button type="submit" class ="btn btn-primary pull-right">Create</button>
 		</form>
-	</div>
+		</div>
 </div>
 @stop
