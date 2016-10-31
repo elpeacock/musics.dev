@@ -126,9 +126,14 @@ class UserController extends Controller
     {
         $user = Auth::user();
 
-        $band_ids = $request->input('selectedValues');
+        $band_ids = $request->all('userBands[]');
 
-        dd($request);
+        foreach ($band_ids as $band_id) {
+
+            $user->bandPreferences()->attach($band_id);
+
+        };
+        return redirect()->action('UserController@show');
     }
 
     public function destroy($id)
