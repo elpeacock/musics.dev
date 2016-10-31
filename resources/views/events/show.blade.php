@@ -8,17 +8,17 @@
 
         {{-- <img class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/> --}}
 
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><div class="bandContainer"><div class="bandImg" id=""></div></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="artistImg"><div class="bandContainer"><div class="bandImg" id=""></div></div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <div class="fb-profile-text">
-              <h1>{{$events->band[0]->name}}</h1>
+              <h1>{{$events->band->name}}</h1>
               @if(Auth::check())
                   <form method="POST" action="{{action('RsvpController@store')}}">
                 {!! csrf_field() !!}
                     <div class="form-group">
                         <input type="hidden" name="user_id" value="{{Auth::id()}}">
-                        <input type="hidden" name="event_id" value="{{$events->band[0]->id}}">
+                        <input type="hidden" name="event_id" value="{{$events->id}}">
                     </div>
                     <button type="submit" class="btn btn-default">RSVP &nbsp<i class="fa fa-calendar-check-o"></i></button>
               </form> 
@@ -132,7 +132,7 @@ $(function($img) {
         };
 
         $.ajax({
-            url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q={{$events->band[0]->name}}" + $.param(params),
+            url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q={{$events->band->name}}" + $.param(params),
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type","multipart/form-data");
