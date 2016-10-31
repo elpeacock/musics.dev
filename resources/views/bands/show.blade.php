@@ -5,7 +5,7 @@
 @section('content')
 <div class="container" id="BandShowImage">
     <div class="fb-profile">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="artistImg">
         <div class="bandContainer"><div class="bandImg" id="image"></div>
     </div>
     </div>

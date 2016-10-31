@@ -132,6 +132,12 @@ img {
     float: left;
 }
 
+/*event show page*/
+
+#artistImg{
+    padding-left: 0px;
+}
+
 /*Footer*/
 
 footer ul li a {
