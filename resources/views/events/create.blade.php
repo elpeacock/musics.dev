@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="form-group">
-				<h4 class="modal-title">Add a pice</h4>
+				<h4 class="modal-title">Add a price</h4>
 				<input type="text" class="form-control" name="price" id="price" placeholder="price">
 			</div>
 
