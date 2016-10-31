@@ -18,8 +18,21 @@ $(document).ready(function() {
 
         var userPrefs = soul.concat(rockpop, altrock, rap, country, jazz, metal, dance, indie);
 
-        console.log(userPrefs)
+        sendUserPrefs(userPrefs);
 
     });
+
+    function sendUserPrefs() {
+        $.ajax({
+            url: 'UserController@storeUserFavorites', 
+            type: 'POST', 
+            data: {data : userPrefs}, 
+            dataType: 'text', 
+            success: function() {
+                console.log('favorites sent');
+            };
+        });
+
+    };
 
 });
