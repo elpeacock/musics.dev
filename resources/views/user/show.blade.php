@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+	<div class="row">
+		{{-- <div class="col-xs-3">
+			<img class="img img-thumbnail" src="{{ $user-> }}" height="150" width="150">
+		</div> --}}
 
 	<h1>{{$user->name}}</h1>
 	<h4>User Email: {{$user->email}}</h4>
