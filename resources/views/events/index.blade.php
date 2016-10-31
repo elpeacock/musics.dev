@@ -69,7 +69,7 @@
         <h4>Location: {{$event->venue->name}}</h4>
         <h4>Date: {{$event->event_time}}</h4>
         <h4>Ticket Price: ${{$event->price}}</h4>
-        <h4> Ticket Location: {{$event->buy_ticket}}</h4>
+        <h4>Ticket Location: {{$event->buy_tickets}}</h4>
         <hr>
        </div>
     </div>
