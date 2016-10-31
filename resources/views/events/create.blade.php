@@ -12,7 +12,7 @@
 		<form method="POST" action="{{ action('EventsController@store') }}" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<div class="form-group">
-				<h4 class="modal-title">Add band/bands</h4>
+				<h4 class="modal-title">Add band</h4>
 				<select name="band">
 							@foreach ($bands as $band)
 								<option value="{{ $band->id }}">{{ $band->name }}</option>
