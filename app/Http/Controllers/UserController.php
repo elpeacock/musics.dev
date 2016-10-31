@@ -124,9 +124,9 @@ class UserController extends Controller
     {
         $user = Auth::user();
 
-        $band_ids = $request->input('selectedValues');
+        // $band_ids = $request->input('userPrefs');
         
-        dd($request);
+        dd($request->all());
 
     }
 
