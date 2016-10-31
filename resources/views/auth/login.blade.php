@@ -2,6 +2,15 @@
 
 @section('content')
 <div class="row">
+<div class="container">
+@if(count($errors))
+		<div class="alert alert-danger">
+		@foreach($errors->all() as $error)
+			<p>{{ $error }}</p>
+		@endforeach
+		</div>
+@endif
+</div>
 	<div class="col-xs-6 col-xs-offset-3">
 		<h4 class="modal-title">Log In</h4>
 		<form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
