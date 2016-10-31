@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use App\Event;
 use App\Rsvp;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -96,8 +98,10 @@ class RsvpController extends Controller
         // $rsvp->user_id = $request->get('user_id');
         // $rsvp->delete();
 
-        $rsvp = Rsvp::findOrFail($id);
-        $rsvp->delete($id);
+        $user = Auth::user();
+        $event = Event::find($id);
+
+        $user->events()->detach($id);
 
         return redirect()->action('EventsController@index');
     }
