@@ -30,15 +30,18 @@ class EventsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
           if (!Auth::check()) {
         		return view('auth.login');
     		}
         $bands = Band::all();
-        $venue = Venue::all();
+        $venues = Venue::all();
+        // $event->event_time = $request->get('time');
+        // $event->price = $request->get('price');
+        // $event->buy_tickets = $request->get('tickets');
 
-        $data = compact('bands', 'venue');
+        $data = compact('bands', 'venues');
     		return view('events.create', $data);
 
 
@@ -53,20 +56,20 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-          session()->flash('fail', 'Your event was NOT created. Please fix errors.');
-          $this->validate($request, Event::$rules);
+
+          //session()->flash('fail', 'Your event was NOT created. Please fix errors.');
+          //$this->validate($request, Event::$rules);
+
           $event = new Event();
           $event->band_id = $request->get('band');
           $event->venue_id = $request->get('venue');
-          $event->event_time = $request->get('time');
-          $event->price = $request->get('price');
-          $event->buy_tickets = $request->get('tickets');
-
-
-
+          $event->event_time = $request->input('time');
+          $event->price = $request->input('price');
+          $event->buy_tickets = $request->input('buy_tickets');
           $event->save();
-          session()->flash('success', 'Your event was created successfully!');
-          return redirect()->action('EventsController@show', $event->id);
+
+          // session()->flash('success', 'Your event was created successfully!');
+          return redirect()->action('EventsController@index');
 
     }
 
@@ -89,6 +92,7 @@ class EventsController extends Controller
           $data = [
             'venue' => $venue
           ];
+
 
           $data['events'] = \App\Event::findOrFail($id);
           return view('events.show')->with($data);
