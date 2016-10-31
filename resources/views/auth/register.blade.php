@@ -1,7 +1,16 @@
 @extends('layouts.master')
 
 @section('content')
+
+
 <div class="container">
+@if(count($errors))
+        <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+        </div>
+@endif
 
     <div class="col-xs-8 col-xs-offset-2">
 
