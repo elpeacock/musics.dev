@@ -127,7 +127,20 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
+      session()->flash('fail', 'Your event was NOT created. Please fix errors.');
+      $this->validate($request, Event::$rules);
+      $event = new Event();
+      $event->band_id = $request->get('band');
+      $event->venue_id = $request->get('venue');
+      $event->event_time = $request->get('time');
+      $event->price = $request->get('price');
+      $event->buy_tickets = $request->get('tickets');
 
+
+
+      $event->save();
+      session()->flash('success', 'Your event was created successfully!');
+      return redirect()->action('EventsController@show', $event->id);
 
     }
 
