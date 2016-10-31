@@ -46,7 +46,7 @@
                         id="home_base"
                         placeholder="HomeBase"
                         value="{{ $user->home_base }}">
-                        @include('forms.error', ['field' => 'HomeBase'])
+                        {{-- @include('forms.error', ['field' => 'HomeBase']) --}}
 
             </div>
             <div class="form-group">
@@ -57,7 +57,7 @@
                         id="first_name"
                         placeholder="First name"
                         value="{{ $user->user_name }}">
-                        @include('forms.error', ['field' => 'name'])
+                        {{-- @include('forms.error', ['field' => 'name']) --}}
 
             </div>
             <div class="form-group">
@@ -68,7 +68,7 @@
                         id="email"
                         placeholder="Email"
                         value="{{ $user->email }}">
-                        @include('forms.error', ['field' => 'user'])
+                        {{-- @include('forms.error', ['field' => 'user']) --}}
 
             </div>
             <div class="form-group">
@@ -79,7 +79,7 @@
                         id="email"
                         placeholder="Email"
                         value="{{ $user->password }}">
-                        @include('forms.error', ['field' => 'user'])
+                        {{-- @include('forms.error', ['field' => 'user']) --}}
 
             </div>
           </div>
