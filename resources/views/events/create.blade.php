@@ -31,7 +31,7 @@
 
 			<div class="form-group">
 				<h4 class="modal-title">Add a event time</h4>
-				<input type="text" class="form-control" name="time" id="time" placeholder="Time">
+				<input type="datetime-local" class="form-control" name="time" id="time" placeholder="Time">
 			</div>
 
 			<div class="form-group">
