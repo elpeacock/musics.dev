@@ -71,6 +71,17 @@
                         @include('forms.error', ['field' => 'user'])
 
             </div>
+            <div class="form-group">
+                <input
+                        type="text"
+                        class="form-control"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        value="{{ $user->password }}">
+                        @include('forms.error', ['field' => 'user'])
+
+            </div>
           </div>
             <div class="form-group">
                 <label for="image">Add a Profile Picture</label>
