@@ -50,7 +50,7 @@
     clear: both;
 }
 .mainImg{
-    height: 100%;
+    /*height: 100%;*/
     margin-bottom: 25px;
 }
 .bigImg{
@@ -131,7 +131,10 @@ img {
     margin: 0px;
     float: left;
 }
-#BandShowImage{
+
+/*event show page*/
+
+#artistImg{
     padding-left: 0px;
 }
 
@@ -210,8 +213,15 @@ footer ul {
 	padding-top: 7px;
 }
 
-/*favorites page*/
-
-.button-holder {
-    text-align: center;
+#wrapper, html, body{
+	height:100%;
 }
+#wrapper{
+	margin-bottom:-190px;
+}
+#push{
+	height:110px;
+	clear: both;
+}
+
+/* dropdown */

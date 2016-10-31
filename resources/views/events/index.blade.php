@@ -6,7 +6,7 @@
 
 {{-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	<img class="imgSize" src="/img/concert.jpg">
-	
+
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 imgUnder secondRow"><img class="imgSize" src="/img/conert2.jpg"></div>
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 imgUnder secondRow"><img class="imgSize" src="/img/concert3.jpg"></div>
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 imgUnder secondRow"><img class="imgSize" src="/img/concert4.jpg"></div>
@@ -25,7 +25,7 @@
   		<div class="media-body">
     		<a href="/events/{{$i}}"><h4 class="media-heading">Event {{$i}}</h4></a>
           <p>Info</p>
-          
+
        </div>
     </div>
   </div>
@@ -65,10 +65,11 @@
     		<img class="media-object" src="http://placekitten.com/250/180">
   		</a>
   		<div class="media-body">
-    		<a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band[0]->name}}</h3></a>
+    		<a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
         <h4>Location: {{$event->venue->name}}</h4>
         <h4>Date: {{$event->event_time}}</h4>
         <h4>Ticket Price: ${{$event->price}}</h4>
+        <h4> Ticket Location: {{$event->buy_ticket}}</h4>
         <hr>
        </div>
     </div>
