@@ -32,18 +32,24 @@
     </ul>
     </div>
 
-    <hr>
+	<h1>RSVPs</h1>
+	@foreach($user->events as $event)
+	<div class="col-lg-8">
+		<a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
+		<h4>Location: {{$event->venue->name}}</h4>
+		<h4>Date: {{$event->event_time}}</h4>
+		<h4>Ticket Price: ${{$event->price}}</h4>
+		<hr>
+	</div>
+	<div class="col-lg-4">
+		<form class="form" method="POST" action="{{ action('RsvpController@destroy', $event->id) }}">
+				{!! csrf_field() !!}
+				{!! method_field('DELETE') !!}
+				<button role="button" class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
+		</form>
 
-    <div>
-    <h1>RSVPs</h1>
-    @foreach($user->events as $event)
-        <a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
-        <h4>Location: {{$event->venue->name}}</h4>
-        <h4>Date: {{$event->event_time}}</h4>
-        <h4>Ticket Price: ${{$event->price}}</h4>
-        <hr>
-    @endforeach
-    </div>
+	</div>
+	@endforeach
 
 </div>
 @stop
