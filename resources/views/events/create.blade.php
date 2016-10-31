@@ -13,7 +13,7 @@
 			{{ csrf_field() }}
 			<div class="form-group">
 				<h4 class="modal-title">Add band/bands</h4>
-				<select name="band">
+				<select class="selectpicker" name="band">
 							@foreach ($bands as $band)
 								<option value="{{ $band->id }}">{{ $band->name }}</option>
 							@endforeach
@@ -22,7 +22,7 @@
 
 			<div class="form-group">
 					<h4 class="modal-title">Add a venue</h4>
-					<select name="venue">
+					<select class="selectpicker" name="venue">
 							@foreach ($venues as $venue)
 								<option value="{{ $venue->id }}">{{ $venue->name }}</option>
 							@endforeach
