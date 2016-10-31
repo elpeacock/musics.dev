@@ -8,7 +8,7 @@
 		{{-- <img class="img img-thumbnail" src="{{ $user-> }}" height="150" width="150"> --}}
 	</div>
 		<div class="container">
-		<h2 class="modal-title">Create Event</h2>
+		<h2>Create Event</h2>
 		<form method="POST" action="{{ action('EventsController@store') }}" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<div class="form-group">
