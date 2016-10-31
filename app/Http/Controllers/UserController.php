@@ -125,8 +125,9 @@ class UserController extends Controller
         $user = Auth::user();
 
         $band_ids = $request->input('selectedValues');
-
+        
         dd($request);
+
     }
 
     public function destroy($id)
