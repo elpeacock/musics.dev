@@ -35,14 +35,16 @@ class UserController extends Controller
     }
     public function update(Request $request, $id)
     {   
-        dd($user->id);
-        if (!Auth::check()) {
-            return view('auth.login');
-        }
-        $user = User::find($id);
-        if (!$user) {
-            abort(404);
-        }
+        $rules = [
+            'name'   => 'required|min:1',
+            'email'     => 'required',
+            'password' => 'required',
+            'password_confirmation' => 'required|same:password',
+        ];
+
+        $request->session()->flash('ERROR_MESSAGE', 'Edits were not saved. Please fix errors.');
+        $this->validate($request, $rules);
+        $request->session()->forget('ERROR_MESSAGE');
 
         $user->first_name = $request->input('user_name');
         $user->email = $request->input('email');
