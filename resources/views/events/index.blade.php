@@ -59,7 +59,8 @@
 
 <div class="container">
 <h2>Popular Events</h2>
-@foreach($events as $event)
+@foreach($events->slice(0, 3) as $event)
+{{-- @if($event->id == 1 || $event->id == 2 || $event->id == 3) --}}
       <div class="media">
       	<a class="pull-left" href="#">
     		<img class="media-object" src="http://placekitten.com/250/180">
@@ -69,12 +70,12 @@
         <h4>Location: {{$event->venue->name}}</h4>
         <h4>Date: {{$event->event_time}}</h4>
         <h4>Ticket Price: ${{$event->price}}</h4>
-        <h4>Ticket Location: {{$event->buy_tickets}}</h4>
+        <h4> Ticket Location: {{$event->buy_ticket}}</h4>
         <hr>
        </div>
     </div>
     <hr>
-
+{{-- @endif --}}
 @endforeach
 </div>
 @stop
