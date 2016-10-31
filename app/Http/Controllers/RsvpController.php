@@ -89,8 +89,16 @@ class RsvpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        // $rsvp = new Rsvp();
+        // $rsvp->event_id = $request->get('event_id');
+        // $rsvp->user_id = $request->get('user_id');
+        // $rsvp->delete();
+
+        $rsvp = Rsvp::findOrFail($id);
+        $rsvp->delete($id);
+
+        return redirect()->action('EventsController@index');
     }
 }
