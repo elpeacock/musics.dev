@@ -3,7 +3,15 @@
 @section('content')
 
 
-        <dl class="dropdown">
+<div class="container">
+@if(count($errors))
+        <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+        </div>
+@endif
+        {{-- <dl class="dropdown">
 
             <dt>
             <a href="#">
@@ -31,21 +39,20 @@
                 </div>
             </dd>
           <button>Filter</button>
-        </dl>
-
+        </dl> --}}
     <div class="col-xs-8 col-xs-offset-2">
         <h4 class="modal-title">Change your account info</h4>
-        <form method="POST" action="{{ action('UserController@update', $user->id) }}" enctype="multipart/form-data">
-            {{ method_field('PUT') }}
-            {{ csrf_field() }}
+        <form class="form" method="POST" action="{{ action('UserController@update', $user->id) }}" enctype="multipart/form-data">
+            {!! csrf_field() !!}
+            {!! method_field('PUT') !!}
             <div class="form-group">
                 <input
                         type="text"
                         class="form-control"
-                        name="HomeBase"
-                        id="home_base"
-                        placeholder="HomeBase"
-                        value="{{ $user->home_base }}">
+                        name="zip_code"
+                        id="zip_code"
+                        placeholder="Zip Code"
+                        value="{{ old('zip_code')==null ? $user->zip_code : old('zip_code') }}">
                         {{-- @include('forms.error', ['field' => 'HomeBase']) --}}
 
             </div>
@@ -53,10 +60,11 @@
                 <input
                         type="text"
                         class="form-control"
-                        name="first_name"
-                        id="first_name"
+                        name="name"
+                        id="name"
                         placeholder="First name"
-                        value="{{ $user->user_name }}">
+                        value="{{ old('name')==null ? $user->name : old('name') }}">
+
                         {{-- @include('forms.error', ['field' => 'name']) --}}
 
             </div>
@@ -67,28 +75,39 @@
                         name="email"
                         id="email"
                         placeholder="Email"
-                        value="{{ $user->email }}">
+                        value="{{ old('email')==null ? $user->email : old('email') }}">
+
                         {{-- @include('forms.error', ['field' => 'user']) --}}
 
             </div>
             <div class="form-group">
                 <input
-                        type="text"
+                        type="password"
                         class="form-control"
-                        name="email"
-                        id="email"
-                        placeholder="Email"
-                        value="{{ $user->password }}">
+                        name="password"
+                        id="password"
+                        placeholder="Password"
+                        {{-- value="{{ $user->password }}" --}}>
                         {{-- @include('forms.error', ['field' => 'user']) --}}
 
             </div>
-          </div>
+            <div class="form-group">
+                <input
+                        type="password"
+                        class="form-control"
+                        name="password_confirmation"
+                        id="password_confirmation"
+                        placeholder="Retype Password"
+                        {{-- value="{{ $user->password }}" --}}>
+                        {{-- @include('forms.error', ['field' => 'user']) --}}
+
+            </div>
             <div class="form-group">
                 <label for="image">Add a Profile Picture</label>
                 <input type="file" id="image" name="image" placeholder="Image">
             </div>
-            <h3><a href="{{ action('UserController@editPassword', $user->id) }}">Change your password</a> </h3>
             <button type="submit" class="btn btn-primary pull-right">Update Info</button>
         </form>
     </div>
+</div>
 @stop

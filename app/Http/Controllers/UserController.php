@@ -44,13 +44,16 @@ class UserController extends Controller
         $data = [
             'user' => $user
         ];
-        return view('user.edit', $data);
+
+        return view('user.edit')->with($data);
+
     }
     public function update(Request $request, $id)
     {   
         $rules = [
-            'name'   => 'required|min:1',
-            'email'     => 'required',
+            'name' => 'required|min:1',
+            'email' => 'required',
+            'zip_code' =>'required',
             'password' => 'required',
             'password_confirmation' => 'required|same:password',
         ];
@@ -59,11 +62,14 @@ class UserController extends Controller
         $this->validate($request, $rules);
         $request->session()->forget('ERROR_MESSAGE');
 
-        $user->first_name = $request->input('user_name');
-        $user->email = $request->input('email');
-        $user->image_url = $request->input('image_url');
-
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->zip_code = $request->zip_code;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        // $user->image_url = $request->input('image_url');
         $user->save();
+
         session()->flash('success', 'Your information was updated successfully!');
         return redirect()->action('UserController@show', $user->id);
     }
