@@ -21,7 +21,7 @@
                         <input type="hidden" name="event_id" value="{{$events->id}}">
                     </div>
                     <button type="submit" class="btn btn-default">RSVP &nbsp<i class="fa fa-calendar-check-o"></i></button>
-              </form> 
+              </form>
               @endif
               <h4><strong>Venue:</strong> {{$events->venue->name}}</h4>
               <h4><strong>Ticket Info:</strong> {{$events->buy_tickets}}</h4>
