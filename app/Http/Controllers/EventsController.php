@@ -44,8 +44,6 @@ class EventsController extends Controller
         $data = compact('bands', 'venues');
         return view('events.create', $data);
 
-
-
     }
 
     /**
@@ -106,6 +104,7 @@ class EventsController extends Controller
     */
     public function edit($id)
     {
+
         if (!Auth::check()) {
             return view('auth.login');
         }
@@ -120,6 +119,22 @@ class EventsController extends Controller
         'venue' => $venue
         ];
         return view('events.edit', $data);
+
+        //when I pulled origin it said there was a conflict here - i wasn't sure what pieces were the keepers so i just commented out lines 125-135 Liz
+
+        //   if (!Auth::check()) {
+        //     return view('auth.login');
+        // }
+        // $bands = Band::all();
+        // $venues = Venue::all();
+        // // $event->event_time = $request->get('time');
+        // // $event->price = $request->get('price');
+        // // $event->buy_tickets = $request->get('tickets');
+
+        // $data = compact('bands', 'venues');
+        // return view('events.create', $data);
+
+
     }
 
     /**
