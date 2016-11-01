@@ -214,15 +214,12 @@ footer ul {
 	padding-top: 7px;
 }
 
-#wrapper, html, body{
-	height:100%;
-}
-#wrapper{
-	margin-bottom:-190px;
-}
-#push{
-	height:110px;
-	clear: both;
+footer {
+bottom: 0;
+height: 50px;
+left: 0;
+position: absolute;
+width: 100%;
 }
 
 /* dropdown */
