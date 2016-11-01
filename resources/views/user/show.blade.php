@@ -15,7 +15,7 @@
     <h1>{{$user->name}}</h1>
     <h4>User Email: {{$user->email}}</h4>
     <h4>BaseZone: {{$user->zip_code}}</h4>
-    Memeber since {{ $user->created_at->format('F Y') }}
+    <h5>Memeber since {{ $user->created_at->format('F Y') }}</h5>
             @if(Auth::check() && (Auth::user()->id == $user->id))
             <div>
                 <a class="btn btn-default" href="{{ action('UserController@edit', $user->id) }}">Change your info</a>
@@ -29,11 +29,13 @@
 
     <div>
     <h1>Favorite Bands</h1>
+    <div class="container">
     <ul>
     @foreach($user->bandPreferences as $favorite)
-        <li class="col-sm-3">{{ $favorite->name }}</li>
+        <li class="col-sm-3"><a href="{{action('BandsController@show', $favorite->id)}}">{{ $favorite->name }}</a></li>
     @endforeach
     </ul>
+    </div>
     </div>
 
     <h1>RSVPs</h1>
@@ -49,7 +51,7 @@
         <form class="form" method="POST" action="{{ action('RsvpController@destroy', $event->id) }}">
                 {!! csrf_field() !!}
                 {!! method_field('DELETE') !!}
-                <button role="button" class="btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
+                <button role="button" class="pull-right btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
         </form>
 
     </div>
