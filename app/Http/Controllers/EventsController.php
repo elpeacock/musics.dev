@@ -19,9 +19,25 @@ class EventsController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function index()
+ 
+    public function index(Request $request)
     {
-        $data['events'] = \App\Event::paginate(15);
+        //search bar fxnality
+        $searchTerm = $request['search'];
+        // dd($searchTerm);
+
+        if (isset($request['search']) && !is_null($request['search'])) {
+
+            $events = Event::searchEventsByBandOrDate($searchTerm)->paginate(15);
+
+        } else {
+
+            $events = \App\Event::paginate(15);
+
+        }
+
+        $data = ['events' => $events];
+
         return view ('events.all')->with($data);
     }
 
