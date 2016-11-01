@@ -31,10 +31,10 @@ class UserController extends Controller
         $data = [
             'user' => $user
         ];
-        return view('users.edit', $data);
+        return view('user.edit', $data);
     }
     public function update(Request $request, $id)
-    {   
+    {
         $rules = [
             'name'   => 'required|min:1',
             'email'     => 'required',
@@ -110,7 +110,7 @@ class UserController extends Controller
         $data = ['user' => $user,
                 'soulBands' => $soulBands,
                 'rockPopBands' => $rockPopBands,
-                'altRockBands' => $altRockBands, 
+                'altRockBands' => $altRockBands,
                 'rapHipHop' => $rapHipHop,
                 'countryFolk' => $countryFolk,
                 'jazzBlues' => $jazzBlues,
