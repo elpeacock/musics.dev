@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'liz@nothing.com', 
             'password' => 'vagrant',
             'zip_code' => '78297',
-            'image_url' => null,
+            
         ]);
 
         DB::table('users')->insert([
@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'joe@nothing.com', 
             'password' => 'vagrant',
             'zip_code' => '78297',
-            'image_url' => null,
+            
         ]);
 
         DB::table('users')->insert([
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'kirk@nothing.com', 
             'password' => 'vagrant',
             'zip_code' => '78297',
-            'image_url' => null,
+            
         ]);
     }
 }
