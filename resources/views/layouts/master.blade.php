@@ -12,10 +12,15 @@
     <link rel="stylesheet" type="text/css" href="/css/mainCss.css">
 </head>
 <body>
-	@include('layouts.partials.navbar')
+  <div id="wrapper">
+  	@include('layouts.partials.navbar')
+    <div class="container">
 
 
     	@yield('content')
+      </div>
+  </div>
+  <div id="push"></div>
 
     @include('layouts.partials.footer')
 

@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer-bottom">
+    <div class="footer">
         <div class="container">
             <p class="pull-left"> Copyright © ShowUp 2016. All right reserved. </p>
             <div class="pull-right">

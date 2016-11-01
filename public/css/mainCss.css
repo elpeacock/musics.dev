@@ -203,12 +203,12 @@ footer ul {
 	color: #083b66;
 }
 
-.footer-bottom {
+/*.footer-bottom {
 	width: 100%;
 	background: #E2D0BE;
 	padding-top: 10px;
 	padding-bottom: 10px;
-}
+}*/
 .footer-bottom p.pull-left {
     color: #234968;
 	padding-top: 7px;
@@ -216,13 +216,21 @@ footer ul {
 
 #wrapper, html, body{
 	height:100%;
+  margin:0;
 }
 #wrapper{
-	margin-bottom:-190px;
+  min-height: 100%;
+  height: auto;
+	margin-bottom:-50px;
 }
 #push{
-	height:110px;
+	height:100px;
 	clear: both;
 }
-
+footer{
+  width: 100%;
+	background: #E2D0BE;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 /* dropdown */
