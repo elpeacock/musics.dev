@@ -13,7 +13,7 @@
                 
             <div class="input-group">
 
-                <input type="text" class="form-control" placeholder="Search" name="search" value="">
+                <input type="text" class="form-control" placeholder="Search" name="search" value="{{ isset($searchTerm) ? $searchTerm : '' }}">
                 
                 <div class="input-group-btn">
                     
