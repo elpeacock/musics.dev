@@ -1,4 +1,4 @@
-#map-canvas {
+*#map-canvas {
             width: 100%;
             height: 481px;
         }
@@ -73,49 +73,50 @@
         height: 200px;
     }
 }
+@media only screen and (min-width : 992px) {
+/*Hover on index*/
+    .imgUnder{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
 
-.imgUnder{
-    padding-right: 0px;
-    padding-left: 0px;
+    .imgUnder:after, .imgUnder:before {
+        position:absolute;
+        opacity:0;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+    }
+    .imgUnder:after {
+        content:'\A';
+        width:100%; height:100%;
+        top:0; left:0;
+        background:rgba(0,0,0,0.6);
+    }
+    .imgUnder:before {
+        content: attr(data-content);
+        width:100%;
+        color:#fff;
+        z-index:1;
+        bottom:0;
+        padding:4px 10px;
+        text-align:left;
+        background:rgba(0,0,0,0.7);
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+    }
+    .imgUnder:hover:after, .imgUnder:hover:before {
+        opacity:1;
+    }
 }
-
-.imgUnder:after, .imgUnder:before {
-    position:absolute;
-    opacity:0;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-}
-.imgUnder:after {
-    content:'\A';
-    width:100%; height:100%;
-    top:0; left:0;
-    background:rgba(0,0,0,0.6);
-}
-.imgUnder:before {
-    content: attr(data-content);
-    width:100%;
-    color:#fff;
-    z-index:1;
-    bottom:0;
-    padding:4px 10px;
-    text-align:left;
-    background:rgba(0,0,0,0.7);
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-}
-.imgUnder:hover:after, .imgUnder:hover:before {
-    opacity:1;
-}
-
 /*1 and 3 under*/
 /*.secondRow{
   height: 200px;
 }
 */
-/*.imgUnder{
+.imgUnder{
   padding-right: 0px;
   padding-left: 0px;
-}*/
+}
 
 /*show band Img*/
 img {
@@ -213,15 +214,12 @@ footer ul {
 	padding-top: 7px;
 }
 
-#wrapper, html, body{
-	height:100%;
-}
-#wrapper{
-	margin-bottom:-190px;
-}
-#push{
-	height:110px;
-	clear: both;
+footer {
+bottom: 0;
+height: 50px;
+left: 0;
+position: absolute;
+width: 100%;
 }
 
 /* dropdown */
