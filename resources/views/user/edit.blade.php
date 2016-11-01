@@ -12,14 +12,12 @@
         </div>
 @endif
         {{-- <dl class="dropdown">
-
             <dt>
             <a href="#">
               <span class="hida">Select</span>
               <p class="multiSel"></p>
             </a>
             </dt>
-
             <dd>
                 <div class="mutliSelect">
                     <ul>
@@ -64,7 +62,6 @@
                         id="name"
                         placeholder="First name"
                         value="{{ old('name')==null ? $user->name : old('name') }}">
-
                         {{-- @include('forms.error', ['field' => 'name']) --}}
 
             </div>
@@ -76,7 +73,6 @@
                         id="email"
                         placeholder="Email"
                         value="{{ old('email')==null ? $user->email : old('email') }}">
-
                         {{-- @include('forms.error', ['field' => 'user']) --}}
 
             </div>
