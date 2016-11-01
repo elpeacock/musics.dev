@@ -55,7 +55,7 @@ class UserController extends Controller
         // $user->image_url = $request->input('image_url');
         $user->save();
 
-        session()->flash('success', 'Your information was updated successfully!');
+        session()->flash('SUCCESS_MESSAGE', 'Your information was updated successfully!');
         return redirect()->action('UserController@show', $user->id);
     }
     public function editPassword($id)
