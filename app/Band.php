@@ -19,4 +19,10 @@ class Band extends Model
         return $this->belongsToMany('App\User', 'user_bands', 'band_id', 'user_id');
     }
 
+    public static function searchByBand($searchTerm)
+    {
+    	return Band::where('name', 'LIKE', '%' . $searchTerm . '%');
+    }
+
+
 }
