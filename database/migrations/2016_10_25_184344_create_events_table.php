@@ -18,7 +18,7 @@ class CreateEventsTable extends Migration
             $table->integer('band_id')->unsigned();
             $table->integer('venue_id')->unsigned();
             $table->dateTime('event_time');
-            $table->decimal('price', 4, 2);
+            $table->decimal('price', 6, 2);
             $table->text('buy_tickets');
             $table->timestamps();
         });
