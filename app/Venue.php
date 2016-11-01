@@ -10,4 +10,9 @@ class Venue extends Model
     {
         return $this->hasMany('App\Event');
     }
+
+    public static function cities()
+    {
+    	return static::select('city')->distinct()->get();
+    }
 }
