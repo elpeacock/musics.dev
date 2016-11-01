@@ -12,14 +12,12 @@
         </div>
 @endif
         {{-- <dl class="dropdown">
-
             <dt>
             <a href="#">
               <span class="hida">Select</span>
               <p class="multiSel"></p>
             </a>
             </dt>
-
             <dd>
                 <div class="mutliSelect">
                     <ul>

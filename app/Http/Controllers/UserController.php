@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return view ('users.index');
     }
@@ -31,7 +31,9 @@ class UserController extends Controller
         $data = [
             'user' => $user
         ];
+
         return view('user.edit')->with($data);
+
     }
     public function update(Request $request, $id)
     {   
@@ -151,8 +153,5 @@ class UserController extends Controller
         session()->flash('success', 'Your account was deleted successfully!');
         return redirect()->action('eventsController@index');
     }
-    public function search(Request $request)
-    {
 
-    }
 }
