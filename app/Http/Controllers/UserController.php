@@ -12,20 +12,7 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $searchTerm = $request['search'];
-        // for search bar functionality
-        if (isset($request['search']) && !is_null($request['search'])) {
-
-            $bands = \App\Band::searchByBand($searchTerm)->paginate(15);
-            
-        } else {
-            
-            $bands = \App\Band::paginate(15);
-        
-        }
-
-        $data = ['bands' => $bands];
-        return view ('bands.index')->with($data);
+        return view ('users.index');
     }
     public function show($id)
     {
