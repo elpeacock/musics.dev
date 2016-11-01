@@ -108,7 +108,7 @@ var renderMap = function (address, mapOptions){
               });
 
               var infoWindow = new google.maps.InfoWindow({
-                  content: "Venue Name"
+                  content: "<h2 style=text-align: center;>{{$events->venue->name}}</h2>"
               });
                      // Recenter the map over the address
               map.setCenter(results[0].geometry.location);
