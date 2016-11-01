@@ -7,13 +7,13 @@
 	<div class="col-xs-3">
 		{{-- <img class="img img-thumbnail" src="{{ $user-> }}" height="150" width="150"> --}}
 	</div>
-	<div class="col-xs-6 col-xs-offset-3">
-		<h2 class="modal-title">Create Event</h2>
+		<div class="container">
+		<h2>Create Event</h2>
 		<form method="POST" action="{{ action('EventsController@store') }}" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<div class="form-group">
-				<h4 class="modal-title">Add band</h4>
-				<select name="band">
+				<h4 class="modal-title">Add band/bands</h4>
+				<select class="selectpicker" name="band">
 							@foreach ($bands as $band)
 								<option value="{{ $band->id }}">{{ $band->name }}</option>
 							@endforeach
@@ -22,7 +22,7 @@
 
 			<div class="form-group">
 					<h4 class="modal-title">Add a venue</h4>
-					<select name="venue">
+					<select class="selectpicker" name="venue">
 							@foreach ($venues as $venue)
 								<option value="{{ $venue->id }}">{{ $venue->name }}</option>
 							@endforeach
@@ -31,7 +31,7 @@
 
 			<div class="form-group">
 				<h4 class="modal-title">Add a event time</h4>
-				<input type="text" class="form-control" name="time" id="time" placeholder="Time">
+				<input type="datetime-local" class="form-control" name="time" id="time" placeholder="Time">
 			</div>
 
 			<div class="form-group">
@@ -46,6 +46,6 @@
 
 			<button type="submit" class ="btn btn-primary pull-right">Create</button>
 		</form>
-	</div>
+		</div>
 </div>
 @stop
