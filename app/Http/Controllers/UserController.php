@@ -10,9 +10,22 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view ('users.index');
+        $searchTerm = $request['search'];
+        // for search bar functionality
+        if (isset($request['search']) && !is_null($request['search'])) {
+
+            $bands = \App\Band::searchByBand($searchTerm)->paginate(15);
+            
+        } else {
+            
+            $bands = \App\Band::paginate(15);
+        
+        }
+
+        $data = ['bands' => $bands];
+        return view ('bands.index')->with($data);
     }
     public function show($id)
     {
@@ -31,7 +44,9 @@ class UserController extends Controller
         $data = [
             'user' => $user
         ];
+
         return view('user.edit')->with($data);
+
     }
     public function update(Request $request, $id)
     {   
@@ -151,8 +166,5 @@ class UserController extends Controller
         session()->flash('success', 'Your account was deleted successfully!');
         return redirect()->action('eventsController@index');
     }
-    public function search(Request $request)
-    {
 
-    }
 }
