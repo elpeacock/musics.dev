@@ -9,7 +9,7 @@
 
     <div class='row'>
 
-        <form class="form-inline pull-right" role="search" method="GET" action="">
+        <form class="form-inline pull-right" role="search" method="GET" action="{{ action('EventsController@index') }}">
                 
             <div class="input-group">
 
