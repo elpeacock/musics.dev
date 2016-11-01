@@ -105,34 +105,18 @@ class EventsController extends Controller
     public function edit($id)
     {
 
+
         if (!Auth::check()) {
             return view('auth.login');
         }
-        $event = Event::find($id);
-        if (!$event) {
-            abort(404);
-        }
-        $data = [
-        'event' => $event
-        ];
-        $data = [
-        'venue' => $venue
-        ];
-        return view('events.edit', $data);
+        $bands = Band::all();
+        $venues = Venue::all();
+        // $event->event_time = $request->get('time');
+        // $event->price = $request->get('price');
+        // $event->buy_tickets = $request->get('tickets');
 
-        //when I pulled origin it said there was a conflict here - i wasn't sure what pieces were the keepers so i just commented out lines 125-135 Liz
-
-        //   if (!Auth::check()) {
-        //     return view('auth.login');
-        // }
-        // $bands = Band::all();
-        // $venues = Venue::all();
-        // // $event->event_time = $request->get('time');
-        // // $event->price = $request->get('price');
-        // // $event->buy_tickets = $request->get('tickets');
-
-        // $data = compact('bands', 'venues');
-        // return view('events.create', $data);
+        $data = compact('bands', 'venues');
+        return view('events.create', $data);
 
 
     }
