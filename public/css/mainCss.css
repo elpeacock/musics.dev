@@ -149,6 +149,10 @@ ul.pagination {
     height: 33.33%;
 }
 
+#deleteRsvp{
+    margin-top: 70px;
+}
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
     .bigImg{

@@ -50,7 +50,7 @@
         <form class="form" method="POST" action="{{ action('RsvpController@destroy', $event->id) }}">
                 {!! csrf_field() !!}
                 {!! method_field('DELETE') !!}
-                <button role="button" class="pull-right btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
+                <button role="button" id="deleteRsvp" class="pull-right btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
         </form>
 
     </div>
