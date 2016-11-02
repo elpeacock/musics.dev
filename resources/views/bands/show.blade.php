@@ -5,11 +5,11 @@
 @section('content')
 <div class="container" id="BandShowImage">
     <div class="fb-profile">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="artistImg">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" id="artistImg">
         <div class="bandContainer"><div class="bandImg" id="image"></div>
     </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <div class="fb-profile-text">
             <h1>{{$bands->name}}</h1>
             <h3>Genre</h3>
@@ -25,7 +25,7 @@
         @foreach($bands->events as $event)
           <div class="media">
             <a class="pull-left" href="#">
-                <img class="media-object" src="http://placekitten.com/250/180">
+                <img class="media-object" src="/img/rockNroll.png">
             </a>
             <div class="media-body">
                 <a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>

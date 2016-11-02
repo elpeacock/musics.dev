@@ -31,7 +31,7 @@
 
             <div class="caption">
 
-                <h4><a href="{{action('BandsController@show', $band->id)}}">{{ $band->name }}</a></h4>
+                <h4><a href="{{action('BandsController@show', $band->id)}}">{{ str_limit($band->name, 17) }}</a></h4>
 
             </div>
 
