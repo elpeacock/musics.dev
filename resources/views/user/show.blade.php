@@ -38,6 +38,7 @@
     <h1>RSVPs</h1>
     @if(count($user->events) != 0)
     @foreach($user->events as $event)
+    <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
         <a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
         <h4>Location: {{$event->venue->name}}</h4>
@@ -52,6 +53,7 @@
                 <button role="button" class="pull-right btn btn-danger">Delete <i class="fa fa-trash-o"></i></button>
         </form>
 
+    </div>
     </div>
     @endforeach
     @else
