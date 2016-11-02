@@ -12,7 +12,7 @@ Faves...
         
     <h1>Pick some favorites</h1>
 
-    <h4>Tell us about your music preferences so you can keep tabs on when they'll be touring!</h4>
+    <h4>Tell us about your favorite bands so you can keep tabs on when they'll be touring!</h4>
 
     <hr>
     
