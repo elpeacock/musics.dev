@@ -98,10 +98,7 @@
                         {{-- @include('forms.error', ['field' => 'user']) --}}
 
             </div>
-            <div class="form-group">
-                <label for="image">Add a Profile Picture</label>
-                <input type="file" id="image" name="image" placeholder="Image">
-            </div>
+
             <button type="submit" class="btn btn-primary pull-right">Update Info</button>
         </form>
     </div>
