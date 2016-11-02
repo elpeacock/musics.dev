@@ -5,11 +5,11 @@
 
 <div class="container">
 <div class="row">
-@if(session()->has('SUCCESS_MESSAGE'))
+{{-- @if(session()->has('SUCCESS_MESSAGE'))
         <div class="alert alert-success">
             <p>{{ session('SUCCESS_MESSAGE') }}</p>
         </div>
-@endif
+@endif --}}
         {{-- <div class="col-xs-3">
             <img class="img img-thumbnail" src="{{ $user-> }}" height="150" width="150">
         </div> --}}
