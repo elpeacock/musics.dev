@@ -4,15 +4,13 @@
 
 @section('content')
 <div class="row">
-	<div class="col-xs-3">
-		{{-- <img class="img img-thumbnail" src="{{ $user-> }}" height="150" width="150"> --}}
-	</div>
-		<div class="container">
-		<h2>Create Event</h2>
+
+		<div class="col-xs-8 col-xs-offset-2">
+		<h1>Create Event</h1>
 		<form method="POST" action="{{ action('EventsController@store') }}" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<div class="form-group">
-				<h4 class="modal-title">Add band/bands</h4>
+				<h4 class="modal-title">Add Headliner</h4>
 				<select class="selectpicker" name="band">
 							@foreach ($bands as $band)
 								<option value="{{ $band->id }}">{{ $band->name }}</option>
