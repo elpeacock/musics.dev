@@ -4,17 +4,23 @@
 
 
 <div class="container">
+
 @if(count($errors))
+
         <div class="alert alert-danger">
+
         @foreach($errors->all() as $error)
+
             <p>{{ $error }}</p>
+
         @endforeach
+        
         </div>
 @endif
 
     <div class="col-xs-8 col-xs-offset-2">
 
-        <h2>Create a new account</h2>
+        <h1>Create a new account</h1>
 
         <form method="POST" action="/auth/register">
 
