@@ -5,7 +5,8 @@
 @section('content')
 <div class="row">
 
-		<div class="col-xs-8 col-xs-offset-2">
+	<div class="col-xs-8 col-xs-offset-2">
+	
 		<h1>Create Event</h1>
 		<form method="POST" action="{{ action('EventsController@store') }}" enctype="multipart/form-data">
 			{{ csrf_field() }}
