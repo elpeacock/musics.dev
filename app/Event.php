@@ -56,6 +56,10 @@ class Event extends Model
         return static::join('bands', 'bands.id', '=', 'events.band_id')->where('bands.name', 'LIKE', "%{$searchTerm}%")->orWhere('events.event_time', 'LIKE', "%{$searchTerm}%")->select('*', 'events.id as id');
     }
 
+    public static function searchEventsByVenue($searchTerm)
+    {
+        return static::join('venues', 'venues.id', '=', 'events.venue_id')->where('venues.city', 'LIKE', "%{$searchTerm}%")->select('*', 'events.id as id');
+    }
 // protected $fillable = ['band_id', 'venue_id', 'price', 'event_time', 'buy_tickets'];
 
 }
