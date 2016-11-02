@@ -24,6 +24,7 @@ class EventsController extends Controller
     {
         //search bar fxnality
         $searchTerm = $request['search'];
+        $searchTown = $request['city'];
         // dd($searchTerm);
 
         if (isset($request['search']) && !is_null($request['search'])) {
@@ -36,7 +37,24 @@ class EventsController extends Controller
 
         }
 
-        $data = ['events' => $events];
+        if (isset($request['city']) && !is_null($request['city'])) {
+            // dd($request['city']);
+            
+            $events = Event::searchEventsByVenue($searchTown)->paginate(15);
+
+        } else {
+
+            $events = \App\Event::paginate(15);
+
+        }
+
+
+        $cities = Venue::cities();
+
+        $data = [
+            'events' => $events,
+            'cities' => $cities
+        ];
 
         return view ('events.all')->with($data);
     }
