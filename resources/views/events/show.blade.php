@@ -8,9 +8,9 @@
 
         {{-- <img class="fb-image-lg" src="http://placekitten.com/1000/280" alt="Profile image example"/> --}}
 
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="artistImg"><div class="bandContainer"><div class="bandImg" id=""></div></div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" id="artistImg"><div class="bandContainer"><div class="bandImg" id=""></div></div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
           <div class="fb-profile-text">
               <h1>{{$events->band->name}}</h1>
               @if(Auth::check())
@@ -40,7 +40,7 @@
 
 {{-- AIzaSyAeEOGGnOFWbYLlHT4dWckzghnotNw4oNU --}}
 
-
+{{--///////////////////////////////// Map api //////////////////////////////--}}
 <script type="text/javascript">
     (function() {
     "use strict";
@@ -60,25 +60,6 @@
         var geocoder = new google.maps.Geocoder();
 // Set our address to geocode
 var address = "{{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}} {{$events->venue->zip_code}}";
-
-// // Init geocoder object
-// var geocoder = new google.maps.Geocoder();
-
-// // Geocode our address
-// geocoder.geocode({ "address": address }, function(results, status) {
-
-//    // Check for a successful result
-//    if (status == google.maps.GeocoderStatus.OK) {
-
-//        // Recenter the map over the address
-//        map.setCenter(results[0].geometry.location);
-//    } else {
-
-//        // Show an error message with the status if our request fails
-//        alert("Geocoding was not successful - STATUS: " + status);
-//    }
-
-// });
 
 var renderMap = function (address, mapOptions){
         // Init geocoder object
@@ -125,6 +106,8 @@ var renderMap = function (address, mapOptions){
 
       }//end of function
 renderMap(address, mapOptions);
+
+//////////////////////////// image api ////////////////////////////////////////////
 
 $(function($img) {
         var params = {

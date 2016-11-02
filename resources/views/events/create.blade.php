@@ -38,8 +38,8 @@
 			</div>
 
 			<div class="form-group">
-				<h4 class="modal-title">Ticket URL</h4>
-				<input type="text" class="form-control" name="buy_tickets" id="tickets" placeholder="ticket URL">
+				<h4 class="modal-title">Purchase Tickets At</h4>
+				<input type="text" class="form-control" name="buy_tickets" id="tickets" placeholder="tickets">
 			</div>
 
 			<button type="submit" class ="btn btn-primary pull-right">Create</button>
