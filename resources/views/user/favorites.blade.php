@@ -158,9 +158,9 @@ Faves and more...
     <form name="band-prefs" id="user-band-prefs" class="form" method="POST" action="{{ action('UserController@storeUserFavorites') }}">
 
         {{ csrf_field() }}
-        <div class='button-holder'>
+        <div class='text-center band-prefs'>
             
-            <input type="submit" class="btn button-submit">
+            <input type="submit" class="btn btn-primary">
 
         </div>
 

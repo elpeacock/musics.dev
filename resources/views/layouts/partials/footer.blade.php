@@ -1,7 +1,7 @@
 <footer>
     <div class="footer">
         <div class="container">
-            <p class="pull-left"> Copyright © ShowUp 2016. All right reserved. </p>
+            <p class="pull-left" id="footer-text"> Copyright © ShowUp 2016. All right reserved. </p>
             <div class="pull-right">
                 <ul class="social">
                     <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
