@@ -21,9 +21,9 @@
 
 </div>
     
-    <div class="col-xs-6 col-xs-offset-3">
+    <div class="col-xs-8 col-xs-offset-2">
 
-        <h1 class="modal-title">Log In</h1>
+        <h1>Log In</h1>
 
         <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
             {{ csrf_field() }}
@@ -42,7 +42,7 @@
 
             </div>
 
-            <div class="form-group">
+            <div class="pull-left">
 
                 <a href="#">reset password</a>
 
