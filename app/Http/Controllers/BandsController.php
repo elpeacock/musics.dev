@@ -14,9 +14,24 @@ class BandsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['bands'] = \App\Band::paginate(15);
+        // $data['bands'] = \App\Band::paginate(15);
+
+        $searchTerm = $request['search'];
+
+        if (isset($request['search']) && !is_null($request['search'])) {
+
+            $bands = \App\Band::searchBand($searchTerm)->paginate(15);
+
+        } else {
+
+            $bands = \App\Band::paginate(15);
+
+        }
+
+        $data = ['bands' => $bands];
+
         return view('bands.index')->with($data);
     }
 

@@ -24,5 +24,8 @@ class Band extends Model
         return $this->belongsTo('App\Genre', 'genre_id');
     }
 
-
+    public static function searchBand($searchTerm)
+    {
+        return self::where('name', 'LIKE', '%' . $searchTerm . '%');
+    }
 }

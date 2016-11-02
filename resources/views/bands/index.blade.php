@@ -5,6 +5,17 @@
 @section('content')
 
 <div class="container">
+        <form class="form-inline" method="GET" name="search" action="{{ action('BandsController@index') }}">
+
+            <div class="input-group">
+
+                <input type="text" class="form-control" placeholder="Search" name="search" value="{{ isset($searchTerm) ? $searchTerm : '' }}">
+            
+            </div>
+          
+          <button type="submit" class="btn btn-primary">Search</button>
+
+        </form>
 
         <h1>All Bands</h1>
 
