@@ -35,25 +35,17 @@
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainImg">
 
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 imgUnder bigImg" data-content="Band Name: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 imgUnder bigImg" data-content="Welcome to ShowUp.buzz! A place to view events and artists!">
     <img class="imgSize" src="/img/concert.jpg">
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 bigImg">
 
-        <div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Band Name: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation."><img class="imgSize" src="/img/conert2.jpg"></div>
+        <a href="/events/2"><div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Kanye West"><img class="imgSize" src="/img/kanye2.jpg"></div></a>
 
-        <div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Band Name: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation"><img class="imgSize" src="/img/concert3.jpg"></div>
+        <a href="/events/5"><div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Willie Nelson"><img class="imgSize" src="/img/willie.jpg"></div></a>
 
-        <div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Band Name: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation"><img class="imgSize" src="/img/concert4.jpg"></div>
+        <a href="/events/9"><div class="col-lg-12 col-md-12 col-sm-4 col-xs-4 imgUnder secondRow" data-content="Red Hot Chili Peppers"><img class="imgSize" src="/img/RHCP.jpg"></div></a>
     </div>
 </div>
 
