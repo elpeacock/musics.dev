@@ -20,37 +20,41 @@
 @endif
 
 </div>
+
+    <div class="row">
     
-    <div class="col-xs-8 col-xs-offset-2">
+        <div class="col-xs-8 col-xs-offset-2">
 
-        <h1>Log In</h1>
+            <h1>Log In</h1>
 
-        <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
-            {{ csrf_field() }}
+            <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
+                {{ csrf_field() }}
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <input type="text" class="form-control" name="email" id="email" placeholder="email">
-                {{-- @include('forms.error', ['field' => 'email']) --}}
+                    <input type="text" class="form-control" name="email" id="email" placeholder="email">
+                    {{-- @include('forms.error', ['field' => 'email']) --}}
 
-            </div>
+                </div>
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <input type="password" class="form-control" name="password" id="password" placeholder="password">
-                {{-- @include('forms.error', ['field' => 'password']) --}}
+                    <input type="password" class="form-control" name="password" id="password" placeholder="password">
+                    {{-- @include('forms.error', ['field' => 'password']) --}}
 
-            </div>
+                </div>
 
-            <div class="pull-left">
+                <div class="pull-left">
 
-                <a href="#">reset password</a>
+                    <a href="#">reset password</a>
 
-            </div>
+                </div>
 
-            <button type="submit" class ="btn btn-primary pull-right">log in</button>
+                <button type="submit" class ="btn btn-primary pull-right">log in</button>
 
-        </form>
+            </form>
+
+        </div>
 
     </div>
     
