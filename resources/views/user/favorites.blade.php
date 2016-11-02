@@ -2,13 +2,19 @@
 
 @section('title')
 
-Faves and more...
+Faves...
 
 @stop
 
 @section('content')
 
 <div class="container">
+        
+    <h1>Pick some favorites</h1>
+
+    <h4>Tell us about your music preferences so you can keep tabs on when they'll be touring!</h4>
+
+    <hr>
     
     <div class="row">
         
