@@ -13,21 +13,21 @@
 
 INSERT INTO `bands` (`seeder_id`, `name`, `genre_id`, `owner_id`, `description`, `image_url`, `created_at`, `updated_at`)
 VALUES
-	(4,'112',3,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(6,'3 Doors Down',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(7,'30 Seconds To Mars',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(8,'36 Crazyfists',6,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(10,'50 Cent',8,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(11,'54-40',6,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(12,'70s Soul Jam',3,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(15,'A Day to Remember',6,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(17,'A Tribute To Led Zeppelin',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(20,'Aaron Carter',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(21,'Aaron Lewis',6,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(22,'Aaron Neville',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(23,'Aaron Tippin',9,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(24,'Aaron Watson',9,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
-	(25,'ABBA Mania',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(4,'112',3,1,'112 is an American  R&B quartet from Atlanta, Georgia. Formerly artists on Bad Boy Records, the group signed to the Def Soul roster in 2002. They had great success in the late 1990s and early 2000s with hits such as "Only You", "Anywhere" and the Grammy-nominated single, "Peaches and Cream". ','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(6,'3 Doors Down',5,1,'3 Doors Down is an American rock band from Escatawpa, Mississippi that formed in 1996. The band originally consisted of Brad Arnold (lead vocals/drums), Todd Harrell (bass), and Matt Roberts (lead guitar, backing vocals). The band rose to international fame with their first single, "Kryptonite", which charted in the top three on the Billboard Hot 100 chart. The band then signed with Republic Records and released their debut album, The Better Life, in 2000.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(7,'30 Seconds To Mars',5,1,'30 Seconds to Mars is an American rock band from Los Angeles, California, formed in 1998. The band consists of Jared Leto (lead vocals, guitar, bass, keyboards), Shannon Leto (drums, percussion) and Tomo Miličević (lead guitar, bass, violin, keyboards, other instruments).','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(8,'36 Crazyfists',6,1,'36 Crazyfists is a heavy metal band formed in Anchorage, Alaska, and later based in Portland, Oregon. The bands name comes from the Jackie Chan film Jackie Chan and the 36 Crazy Fists. They have released seven studio albums: In the Skin, Bitterness the Star, A Snow Capped Romance, Rest Inside the Flames, The Tide and Its Takers, Collisions and Castaways, and Time and Trauma.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(10,'50 Cent',8,1,'Curtis James Jackson III (born July 6, 1975), known professionally as 50 Cent, is an American rapper, actor, businessman, and investor. Born in the South Jamaicaneighborhood of the borough of Queens, Jackson began selling drugs at age twelve during the 1980s crack epidemic. Although he left drug-dealing to pursue a musical career, he was struck by nine bullets in a 2000 shooting.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(11,'54-40',6,1,'54-40 is a Canadian alternative rock group from Vancouver, British Columbia, who take their name from the slogan Fifty-Four Forty or Fight!, coined to express the unsuccessful expansionist agenda of James K. Polks presidency, intent upon controlling a contested U.S.-Canada border area in the Oregon boundary dispute.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(12,'70s Soul Jam',3,1,'70s Soul Jam disco hits like "You Make Me Feel Brand New," "You Are Everything," "Cant Give You Anything," "Didnt I," "La La," "Kiss and Say Goodbye," "Shining Star," "Just Dont Want to Be Lonely," and many more!','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(15,'A Day to Remember',6,1,'A Day to Remember is an American rock band from Ocala, Florida, founded in 2003 by guitarist Tom Denney and drummer Bobby Scruggs. They are known for their unusual amalgamation of metalcoreand pop punk. The band currently consists of vocalist Jeremy McKinnon, rhythm guitarist Neil Westfall, bassist Joshua Woodard, percussion and drummer Alex Shelnutt and lead guitarist Kevin Skaff.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(17,'A Tribute To Led Zeppelin',5,1,'A Tribute To Led Zeppelin Imagine this. You are transported back 30 years and you are one of the lucky few to experience a live concert by Led Zeppelin at a local venue. This is what Led Zepplica is all about. The chemistry, the magic, and the legendary performance up close and personal.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(20,'Aaron Carter',5,1,'Aaron Carter  (born December 7, 1987) is an American singer. He came to fame as a pop and hip hop singer in the late 1990s, establishing himself as a star among pre-teen and teenage audiences during the early 2000s with his four studio albums.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(21,'Aaron Lewis',6,1,'Aaron Lewis (born April 13, 1972) is an American musician and songwriter, who is the lead vocalist, rhythm guitarist, and founding member of the rock group Staind, with whom he has released seven studio albums','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(22,'Aaron Neville',5,1,'Aaron Neville (born January 24, 1941, New Orleans, Louisiana, United States) is an American R&B singer and musician. He has had four Platinum-certified albums and four Top 10 hits in the United States, including three that went to #1 on Billboards Adult Contemporary chart.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(23,'Aaron Tippin',9,1,'Aaron Dupree Tippin (born July 3, 1958[2]) is an American country music artist and record producer. Initially a songwriter for Acuff-Rose Music, he gained a recording contract with RCA Nashville in 1990. His debut single, "Youve Got to Stand for Something" became a popular anthem for American soldiers fighting in the Gulf Warand helped to establish him as a neotraditionalist country act with songs that catered primarily to the American working class','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(24,'Aaron Watson',9,1,'Aaron Watson is an American singer (born August 20, 1977) from Amarillo, Texas. Watsons earliest musical influences were the classic country records by George Jones, Merle Haggard, and Willie Nelson his parents listened to and the gospel hymns he sang with his family in church.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
+	(25,'ABBA Mania',5,1,'‘ABBA MANIA’ has been delighting audiences of all ages since it’s formation in 1999, selling out UK theatres nationally. In 2002 it played 18 weeks in the Strand Theatre London re-creating the Abba phenomenon for fans from all over the world.','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(26,'Abba: The Concert',5,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(27,'Abigail Washburn',9,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(28,'ABK - Anybody Killa',8,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
@@ -3855,6 +3855,3 @@ VALUES
 	(11916,'Lucki',8,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(11919,'Frank Fois',12,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00'),
 	(11920,'The Storytellers Band',8,1,'description','image','2016-01-01 00:00:00','2016-01-01 00:00:00');
-
-
-
