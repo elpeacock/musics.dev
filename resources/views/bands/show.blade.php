@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    </div> 
+    </div>
 </div>
 <div class="container">
     <h1>Events</h1>
@@ -49,7 +49,7 @@
         var params = {
             // Request parameters
         };
-      
+
         $.ajax({
             url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q={{$bands->name}}" + $.param(params),
             beforeSend: function(xhrObj){
@@ -65,7 +65,7 @@
           console.log(data);
           console.log(data.value[0].webSearchUrl);
           $img = data.value[0].contentUrl
-          var imageSpace = "" 
+          var imageSpace = ""
            imageSpace += "<img src=" + $img +">"
         $(".bandImg").html(imageSpace);
 
