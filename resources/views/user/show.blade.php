@@ -3,25 +3,7 @@
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-{{-- <script type="text/javascript"
- src="//api.filestackapi.com/filestack.js"></script>
-
-<script type="text/javascript">
-    
-    function proImg (img){
-                var imageSpace = "" 
-                imageSpace += "<img src=" + event.fpfile.url + ">"
-                $("#image").html(imageSpace);
-
-        }
-</script>
- --}}
 <div class="container">
-{{-- <div class="col-lg-12">
-        <div id="image"></div>
-
-        <input type="filepicker" data-fp-apikey="AP4T0YV1TJGQi2wRdpdmwz" data-fp-mimetypes="image/*" data-fp-container="modal" data-fp-services="COMPUTER,FACEBOOK,GITHUB" onchange="proImg()">
-</div> --}}
 <div class="row">
 @if(session()->has('SUCCESS_MESSAGE'))
         <div class="alert alert-success">
@@ -40,10 +22,6 @@
                 <a class="btn btn-default" href="{{ action('UserController@edit', $user->id) }}">Change your info</a>
             </div>
             @endif
-
-    {{-- @if(Auth::id() == $users->id)
-        <a href="{{action('UserController@edit', $users->id)}}"><button type="button" class="btn btn-warning">Edit <i class="fa fa-pencil"></i></button></a>
-    @endif --}}
     <hr>
 
     <div>
@@ -58,15 +36,16 @@
     </div>
 
     <h1>RSVPs</h1>
+    @if(count($user->events) != 0)
     @foreach($user->events as $event)
-    <div class="col-lg-8">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
         <a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
         <h4>Location: {{$event->venue->name}}</h4>
         <h4>Date: {{$event->event_time}}</h4>
         <h4>Ticket Price: ${{$event->price}}</h4>
         <hr>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
         <form class="form" method="POST" action="{{ action('RsvpController@destroy', $event->id) }}">
                 {!! csrf_field() !!}
                 {!! method_field('DELETE') !!}
@@ -75,6 +54,9 @@
 
     </div>
     @endforeach
+    @else
+    <h3>No RSVPs</h3>
+    @endif
 
     </div>
 </div>
