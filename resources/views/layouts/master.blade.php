@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
     {{-- custom css --}}
     <link rel="stylesheet" type="text/css" href="/css/mainCss.css">
+    {{-- google fonts --}}
+    <link href="https://fonts.googleapis.com/css?family=Caudex:400,400i|Federo" rel="stylesheet">
 </head>
 <body>
   <div id="wrapper">
