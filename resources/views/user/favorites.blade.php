@@ -10,7 +10,8 @@ Faves and more...
 
 <div class="container">
     
-
+    <div class="row">
+        
         <div class="col-sm-4">
 
             <h3>R&B/Soul</h3>
@@ -59,6 +60,10 @@ Faves and more...
 
         </div>
 
+    </div>
+
+    <div class="row">
+        
         <div class="col-sm-4">
 
             <h3>Rap/Hip Hop</h3>
@@ -106,6 +111,10 @@ Faves and more...
             </select>
 
         </div>
+
+    </div>
+
+    <div class="row">
 
         <div class="col-sm-4">
 
@@ -155,16 +164,24 @@ Faves and more...
 
         </div>
 
-    <form name="band-prefs" id="user-band-prefs" class="form" method="POST" action="{{ action('UserController@storeUserFavorites') }}">
+    </div>
 
-        {{ csrf_field() }}
-        <div class='text-center band-prefs'>
-            
-            <input type="submit" class="btn btn-primary">
+    <br>
 
-        </div>
+    <div class="row">
+        
+        <form name="band-prefs" id="user-band-prefs" class="form" method="POST" action="{{ action('UserController@storeUserFavorites') }}">
 
-    </form>
+            {{ csrf_field() }}
+            <div class='text-center band-prefs'>
+                
+                <input type="submit" class="btn btn-primary">
+
+            </div>
+
+        </form>
+
+    </div>
 
 </div>
 
