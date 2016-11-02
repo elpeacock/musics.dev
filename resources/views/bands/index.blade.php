@@ -6,7 +6,7 @@
 
 <div class="container">
 
-<h2>All Bands</h2>
+<h1>All Bands</h1>
 
 <div class="container">
 
