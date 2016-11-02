@@ -33,7 +33,7 @@
 
         <a class="pull-left" href="#">
 
-            <img class="media-object" src="http://placekitten.com/250/180">
+            <img class="media-object" src="/img/rockNroll.png">
 
         </a>
 
