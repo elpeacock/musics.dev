@@ -46,7 +46,6 @@
         <h4>Location: {{$event->venue->name}}</h4>
         <h4>Date: {{$event->event_time}}</h4>
         <h4>Ticket Price: ${{$event->price}}</h4>
-        <hr>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
         <form class="form" method="POST" action="{{ action('RsvpController@destroy', $event->id) }}">
@@ -57,6 +56,7 @@
 
     </div>
     </div>
+        <hr>
     @endforeach
     @else
     <h3>No RSVPs</h3>
