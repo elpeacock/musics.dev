@@ -31,4 +31,5 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Custom routes...
 Route::get('/{user}/favorites', 'UserController@pickFavoriteBands');
+// Route::get('/favorites', 'UserController@pickFavoriteBands');
 Route::post('/{user}/favorites', 'UserController@storeUserFavorites');
