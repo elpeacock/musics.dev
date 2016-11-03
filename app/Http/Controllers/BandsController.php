@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Event;
+use App\Band;
+use App\Venue;
+use App\Genre;
 
 class BandsController extends Controller
 {
@@ -42,7 +46,9 @@ class BandsController extends Controller
      */
     public function create()
     {
-        return view('bands.create');
+        $genres = Genre::all();
+        $data = compact('genres');
+        return view('bands.create', $data);
     }
 
     /**
@@ -53,7 +59,14 @@ class BandsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $band = new Band();
+        $band->name = $request->input('bandName');
+        $band->genre_id = $request->input('genre');
+        $band->owner_id = $request->input('ownerID');
+        $band->description = $request->input('description');
+        $band->save();
+
+        return redirect()->action('BandsController@index');
     }
 
     /**
