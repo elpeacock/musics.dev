@@ -20,6 +20,8 @@
             @if(Auth::check() && (Auth::user()->id == $user->id))
             <div>
                 <a class="btn btn-default" href="{{ action('UserController@edit', $user->id) }}">Change your info</a>
+
+                <a class="btn btn-default" href="{{ action('BandsController@create') }}">In a Band?</a>
             </div>
             @endif
     <hr>
