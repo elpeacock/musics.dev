@@ -13,7 +13,9 @@
         <div class="fb-profile-text">
             <h1>{{$bands->name}}</h1>
             <h3>Genre</h3>
-            <p>{{$bands->genres->name}}</p>
+            <h4>{{$bands->genres->name}}</h4>
+            <h3>Description</h3>
+            <h4>{{$bands->description}}</h4>
         </div>
     </div>
 
