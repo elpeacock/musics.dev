@@ -81,10 +81,12 @@ class UserController extends Controller
         return redirect()->action('UserController@show', $user->id);
     }
     public function pickFavoriteBands($id) {
+    // public function pickFavoriteBands() {
         if(!Auth::check()) {
             return view('auth.login');
         }
         $user = User::find($id);
+        // $user = Auth::user();
         $soulBands = Band::where('genre_id', '=', 3)->get();
         $rockPopBands = Band::where('genre_id', '=', 5)->get();
         $altRockBands = Band::where('genre_id', '=', 6)->get();
