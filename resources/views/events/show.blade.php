@@ -42,7 +42,7 @@
 
 {{--///////////////////////////////// Map api //////////////////////////////--}}
 <script type="text/javascript">
-    (function() {
+    // (function() {
     "use strict";
         //places content in divs for three days
         // Set our map options
@@ -62,6 +62,7 @@
 var address = "{{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}} {{$events->venue->zip_code}}";
 
 var renderMap = function (address, mapOptions){
+        console.log(address);
         // Init geocoder object
         var geocoder = new google.maps.Geocoder();
         // Geocode our address
@@ -102,12 +103,27 @@ var renderMap = function (address, mapOptions){
         });
 
         // Render the map
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        
+          var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
+        // var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
       }//end of function
-renderMap(address, mapOptions);
 
-//////////////////////////// image api ////////////////////////////////////////////
+  $(document).ready(function(){
+    console.log('start to render');
+      //renderMap(address, mapOptions);
+      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+      google.maps.event.trigger(map, "resize");
+
+    console.log('done rendering');
+
+
+    });
+
+////////////////////////// image api ////////////////////////////////////////////
 
 $(function($img) {
         var params = {
@@ -140,7 +156,7 @@ $(function($img) {
         });
     });
 
-})();
+// })();
     </script>
 
 
