@@ -138,7 +138,7 @@ ul.pagination {
 
 @media only screen and (min-width: 769px) {
     ul.nav.navbar-nav {
-        float:right !important;
+        float: right !important;
     }
 }
 
