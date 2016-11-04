@@ -30,16 +30,16 @@ class EventsController extends Controller
 
         if (isset($request['search']) && !is_null($request['search'])) {
 
-            $events = Event::searchEventsByBandOrDate($searchTerm)->paginate(15);
+            $events = Event::searchEventsByBandOrDate($searchTerm)->paginate(7);
 
         } else if (isset($request['city']) && !is_null($request['city'])) {
             // dd($request['city']);
             
-            $events = Event::searchEventsByVenue($searchTown)->paginate(15);
+            $events = Event::searchEventsByVenue($searchTown)->paginate(7);
 
         } else {
 
-            $events = \App\Event::paginate(15);
+            $events = \App\Event::paginate(7);
 
         }
 
