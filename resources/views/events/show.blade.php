@@ -42,27 +42,23 @@
 
 {{--///////////////////////////////// Map api //////////////////////////////--}}
 <script type="text/javascript">
-    // (function() {
+    (function() {
     "use strict";
         //places content in divs for three days
         // Set our map options
         var mapOptions = {
             // Set the zoom level
             zoom: 17,
-
             // This sets the center of the map at our location
             center: {
                 lat:  29.426791,
                 lng: -98.489602
             }
         };
-
         var geocoder = new google.maps.Geocoder();
 // Set our address to geocode
 var address = "{{$events->venue->address}}, {{$events->venue->city}}, {{$events->venue->state}} {{$events->venue->zip_code}}";
-
 var renderMap = function (address, mapOptions){
-        console.log(address);
         // Init geocoder object
         var geocoder = new google.maps.Geocoder();
         // Geocode our address
@@ -73,55 +69,32 @@ var renderMap = function (address, mapOptions){
            if (status == google.maps.GeocoderStatus.OK) {
               var lat = results[0].geometry.location.lat();
               var lng = results[0].geometry.location.lng();
-
               addressLatLng = {"lat": lat, "lng":lng};
-
               console.log(results[0]);
               console.log(addressLatLng);
-
               var marker = new google.maps.Marker({
                 position: addressLatLng,
                 map: map,
                 animation: google.maps.Animation.DROP,
               });
-
               google.maps.event.addListener(marker, 'click', function() {         //info pops up when marker clicked
               infoWindow.open(map,marker);
               });
-
               var infoWindow = new google.maps.InfoWindow({
                   content: "<h2 style=text-align: center;>{{$events->venue->name}}</h2>"
               });
                      // Recenter the map over the address
               map.setCenter(results[0].geometry.location);
            } else {
-
                // Show an error message with the status if our request fails
                alert("Geocoding was not successful - STATUS: " + status);
            }
-
         });
-
         // Render the map
-
-        
-          var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-
-        // var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
       }//end of function
+renderMap(address, mapOptions);
 
-  $(document).ready(function(){
-    console.log('start to render');
-      //renderMap(address, mapOptions);
-      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-      google.maps.event.trigger(map, "resize");
-
-    console.log('done rendering');
-
-
-    });
 
 ////////////////////////// image api ////////////////////////////////////////////
 
@@ -156,7 +129,7 @@ $(function($img) {
         });
     });
 
-// })();
+})();
     </script>
 
 
