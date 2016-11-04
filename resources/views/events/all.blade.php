@@ -69,7 +69,7 @@ $(function($img) {
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type","multipart/form-data");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","230e87a2adcf434ba83a30ea5b633f2f");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","97417c471f334a1b995ffd4cc535391c");
             },
             type: "POST",
             // Request body
