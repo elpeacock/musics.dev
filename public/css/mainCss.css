@@ -278,10 +278,16 @@ img {
 }
 
 /*event show page*/
+@media only screen and (max-width : 992px) {
+    #artistImg{
+        padding-left: 0px;
+        width: 100%;
 
+    }    
+}
 #artistImg{
     padding-left: 0px;
-    width: 100%;
+
 }
 
 #map-canvas {
