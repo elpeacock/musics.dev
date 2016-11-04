@@ -43,7 +43,7 @@
 
             <h4>Location: {{$event->venue->name}}</h4>
             <h4>City: {{$event->venue->city}}</h4>
-            <h4>Date: {{$event->event_time}}</h4>
+            <h4>Date: {{Carbon\Carbon::parse($event->event_time)->format('l, F jS, Y')}}</h4>
             <h4>Ticket Price: ${{$event->price}}</h4>
     		<h4> Ticket Location: {{$event->buy_tickets}}</h4>
 
