@@ -9,7 +9,7 @@
         <div class="bandContainer"><div class="bandImg" id="image"></div>
     </div>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="fb-profile-text">
             <h1>{{$bands->name}}</h1>
             <h3>Genre</h3>
@@ -57,7 +57,7 @@
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type","multipart/form-data");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","230e87a2adcf434ba83a30ea5b633f2f");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","97417c471f334a1b995ffd4cc535391c");
             },
             type: "POST",
             // Request body
