@@ -77,8 +77,8 @@ $(function($img) {
         })
         .done(function(data) {
           console.log(data);
-          console.log(data.value[0].webSearchUrl);
-          $img = data.value[0].contentUrl
+          console.log(data.value[0].thumbnailUrl);
+          $img = data.value[0].thumbnailUrl;
           var imageSpace = ""
            imageSpace += "<img src=" + $img +">"
 
