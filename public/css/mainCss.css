@@ -126,6 +126,22 @@ ul.pagination {
     margin-top: 25px;
 }
 
+/* media breakpoints for nav-bar*/
+@media only screen and (max-width: 768px) {
+    ul.nav.navbar-nav {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (min-width: 769px) {
+    ul.nav.navbar-nav {
+        float:right !important;
+    }
+}
+
 /*feature on show page*/
 
 .imgSize{
