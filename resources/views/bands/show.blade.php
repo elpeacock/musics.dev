@@ -25,17 +25,14 @@
     <h1>Events</h1>
     @if(count($bands->events) != 0)
         @foreach($bands->events as $event)
-          <div class="media">
-            <a class="pull-left" href="#">
-                <img class="media-object" src="/img/rockNroll.png">
-            </a>
-            <div class="media-body">
-                <a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
-            <h4>Location: {{$event->venue->name}}</h4>
-            <h4>Date: {{$event->event_time}}</h4>
-            <h4>Ticket Price: ${{$event->price}}</h4>
-            <hr>
-           </div>
+        <div class="media">
+        <div class="media-body">
+            <a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
+        <h4>Location: {{$event->venue->name}}</h4>
+        <h4>Date: {{$event->event_time}}</h4>
+        <h4>Ticket Price: ${{$event->price}}</h4>
+        <hr>
+        </div>
         </div>
         <hr>
         @endforeach
@@ -57,7 +54,7 @@
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type","multipart/form-data");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","97417c471f334a1b995ffd4cc535391c");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","f555ec3e49ee4279a31ff26a01054049");
             },
             type: "POST",
             // Request body

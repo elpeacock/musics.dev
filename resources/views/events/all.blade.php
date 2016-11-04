@@ -34,7 +34,7 @@
         <a class="pull-left" href="#">
 
             {{-- <img class="media-object" src="/img/rockNroll.png"> --}}
-            <div id="thumbnail" ><div class="{{$event->band->name}}"></div></div>
+            <div id="thumbnail" class="band_{{$event->band_id}}"></div>
 
         </a>
 
@@ -76,16 +76,10 @@ $(function($img) {
             data: "{body}",
         })
         .done(function(data) {
-          console.log(data);
-          console.log(data.value[0].thumbnailUrl);
-          $img = data.value[0].thumbnailUrl;
-          var imageSpace = ""
-           imageSpace += "<img src=" + $img +">"
+          var img = data.value[0].thumbnailUrl;
+          var target = $(".band_{{ $event->band_id }}");
 
-           var $myvalue = '{{$event->band->name}}';
-            var $arr = $myvalue.split(" ");
-        $("."+ $arr[0]).html(imageSpace);
-
+          target.css('background-image', 'url(' + img + ')');
             // alert("success");
         })
         .fail(function() {
@@ -97,7 +91,8 @@ $(function($img) {
     </script>
     @endforeach
 </div>
-
-{!! $events->render() !!}
+<div class="text-center"> 
+    {!! $events->render() !!}
+</div>
 
 @stop
