@@ -265,7 +265,10 @@ img {
 }
 
 #thumbnail{
-    width: 30vh;
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    
 
 }
 .bandContainer{

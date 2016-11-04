@@ -41,7 +41,7 @@
         @endforeach
 
     @else
-    <h3>No Events</h3>
+    <h4>Currently, {{ $bands->name }} has no events scheduled</h4>
     @endif
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
