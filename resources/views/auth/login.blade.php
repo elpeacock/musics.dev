@@ -20,10 +20,20 @@
             <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email" id="email" placeholder="email">
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    name="email" 
+                    id="email" 
+                    placeholder="email">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" id="password" placeholder="password">
+                    <input 
+                    type="password" 
+                    class="form-control" 
+                    name="password" 
+                    id="password" 
+                    placeholder="password">
                 </div>
                 <div class="pull-left">
                     <a href="#">reset password</a>
