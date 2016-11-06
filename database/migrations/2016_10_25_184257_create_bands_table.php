@@ -23,6 +23,7 @@ class CreateBandsTable extends Migration
             $table->string('image_url')->nullable();
             $table->timestamps();
         });
+        
         // Declare foreign keys
         Schema::table('bands', function (Blueprint $table) {
             
@@ -42,6 +43,7 @@ class CreateBandsTable extends Migration
             $table->dropForeign('bands_genre_id_foreign');
             $table->dropForeign('bands_owner_id_foreign');
         });
+        
         Schema::drop('bands');
     }
 }
