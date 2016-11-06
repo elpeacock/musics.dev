@@ -17,6 +17,7 @@ class UserController extends Controller
     public function show($id)
     {
         $data['user'] = \App\User::findOrFail($id);
+
         return view('user.show')->with($data);
     }
     public function edit($id)
@@ -25,12 +26,12 @@ class UserController extends Controller
             return redirect()->action('EventsController@index');
         }
         $user = User::find($id);
+
         if (!$user) {
             abort(404);
         }
-        $data = [
-            'user' => $user
-        ];
+        $data = ['user' => $user];
+
         return view('user.edit')->with($data);
     }
     public function update(Request $request, $id)
@@ -42,9 +43,11 @@ class UserController extends Controller
             'password' => 'required',
             'password_confirmation' => 'required|same:password',
         ];
+
         $request->session()->flash('ERROR_MESSAGE', 'Edits were not saved. Please fix errors.');
         $this->validate($request, $rules);
         $request->session()->forget('ERROR_MESSAGE');
+
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->zip_code = $request->zip_code;
@@ -53,31 +56,35 @@ class UserController extends Controller
         // $user->image_url = $request->input('image_url');
         $user->save();
         session()->flash('SUCCESS_MESSAGE', 'Your information was updated successfully!');
+        
         return redirect()->action('UserController@show', $user->id);
     }
     public function editPassword($id)
     {
         $user = User::find($id);
+
         if (!$user) {
             abort(404);
         } elseif ($user->id != \Auth::user()->id) {
             return redirect()->action('EventsController@index');
         }
-        $data = [
-            'user' => $user
-        ];
+        
+        $data = ['user' => $user];
+
         return view('users.password', $data);
     }
     public function updatePassword(Request $request, $id) {
         session()->flash('fail', 'Your password was NOT updated. Please fix errors.');
         $this->validate($request, User::$passwordRules);
         $user = User::find($id);
+        
         if (!$user) {
             abort(404);
         }
         $user->password = Hash::make($request->input('password'));
         $user->save();
         session()->flash('success', 'Your password was updated successfully!');
+        
         return redirect()->action('UserController@show', $user->id);
     }
     public function pickFavoriteBands($id) {
@@ -96,6 +103,7 @@ class UserController extends Controller
         $hardRockMetal = Band::where('genre_id', '=', 16)->get();
         $danceElectronic = Band::where('genre_id', '=', 18)->get();
         $alternativeIndie = Band::where('genre_id', '=', 73)->get();
+        
         $data = ['user' => $user,
                 'soulBands' => $soulBands,
                 'rockPopBands' => $rockPopBands,
@@ -125,6 +133,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
         session()->flash('success', 'Your account was deleted successfully!');
+        
         return redirect()->action('eventsController@index');
     }
 }
