@@ -6,8 +6,9 @@
 <div class="container" id="BandShowImage">
     <div class="fb-profile">
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" id="artistImg">
-        <div class="bandContainer"><div class="bandImg" id="image"></div>
-    </div>
+        <div class="bandContainer">
+            <div class="bandImg" id="image"></div>
+        </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="fb-profile-text">
@@ -17,30 +18,31 @@
             <h3>Description</h3>
             <h4>{{$bands->description}}</h4>
         </div>
-    </div>
-
-    </div>
-</div>
+    </div> <!-- /.col-lg-4 col-md-4 col-sm-6 col-xs-6 -->
+    </div> <!-- /.fb-profile -->
+</div> <!-- /#BandShowImage -->
 <div class="container">
     <h1>Events</h1>
     @if(count($bands->events) != 0)
+        
         @foreach($bands->events as $event)
-        <div class="media">
-        <div class="media-body">
-            <a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
-        <h4>Location: {{$event->venue->name}}</h4>
-        <h4>Date: {{$event->event_time}}</h4>
-        <h4>Ticket Price: ${{$event->price}}</h4>
-        <hr>
-        </div>
-        </div>
-        <hr>
+            <div class="media">
+            <div class="media-body">
+                <a href="{{action('EventsController@show', $event->id)}}"><h3>{{$event->band->name}}</h3></a>
+            <h4>Location: {{$event->venue->name}}</h4>
+            <h4>Date: {{$event->event_time}}</h4>
+            <h4>Ticket Price: ${{$event->price}}</h4>
+            <hr>
+            </div> <!-- /.media-body -->
+            </div> <!-- /.media -->
+            <hr>
         @endforeach
 
     @else
     <h4>Currently, {{ $bands->name }} has no events scheduled</h4>
     @endif
-</div>
+
+</div> <!-- /.container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <script type="text/javascript">
@@ -60,16 +62,16 @@
             // Request body
             data: "{body}",
         })
-        .done(function(data) {
-          console.log(data);
-          console.log(data.value[0].webSearchUrl);
-          $img = data.value[0].contentUrl
-          var imageSpace = ""
-           imageSpace += "<img src=" + $img +">"
-        $(".bandImg").html(imageSpace);
 
-            // alert("success");
+        .done(function(data) {
+            console.log(data);
+            console.log(data.value[0].webSearchUrl);
+            $img = data.value[0].contentUrl
+            var imageSpace = ""
+            imageSpace += "<img src=" + $img +">"
+            $(".bandImg").html(imageSpace);
         })
+
         .fail(function() {
             // alert("error");
         });
