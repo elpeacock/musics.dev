@@ -64,12 +64,11 @@
         })
 
         .done(function(data) {
-            console.log(data);
-            console.log(data.value[0].webSearchUrl);
-            $img = data.value[0].contentUrl
-            var imageSpace = ""
-            imageSpace += "<img src=" + $img +">"
-            $(".bandImg").html(imageSpace);
+          var img = data.value[0].thumbnailUrl;
+          var target = $(".bandImg");
+
+          target.css('background-image', 'url(' + img + ')');
+            // alert("success");
         })
 
         .fail(function() {

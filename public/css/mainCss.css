@@ -285,7 +285,10 @@ img {
 }
 
 #image {
+    height: 290px;
     width: 290px;
+    background-size: cover;
+    background-position: center;
     margin: 0px;
     float: left;
 }
