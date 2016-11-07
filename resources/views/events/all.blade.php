@@ -31,7 +31,7 @@
 
 	<div class="media">
 
-        <a class="pull-left" href="#">
+        <a class="pull-left" href="{{action('EventsController@show', $event->id)}}">
 
             {{-- <img class="media-object" src="/img/rockNroll.png"> --}}
             <div id="thumbnail" class="band_{{$event->band_id}}"></div>
