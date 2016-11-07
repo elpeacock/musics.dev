@@ -59,7 +59,7 @@
         <hr>
     @endforeach
     @else
-    <h3>No RSVPs</h3>
+    <h4>Currently {{ $event->band->name }} has no events.</h4>
     @endif
 
     </div>
