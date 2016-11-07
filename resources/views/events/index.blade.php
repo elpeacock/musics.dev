@@ -59,7 +59,7 @@
 
         <a class="pull-left" href="#">
 
-            <div id="thumbnail" ><div class="{{$event->band->name}}"></div></div>
+            <div id="thumbnail" class="band_{{$event->band_id}}"></div>
 
         </a>
 
@@ -93,24 +93,17 @@ $(function($img) {
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type","multipart/form-data");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","97417c471f334a1b995ffd4cc535391c");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","f555ec3e49ee4279a31ff26a01054049");
             },
             type: "POST",
             // Request body
             data: "{body}",
         })
         .done(function(data) {
-          console.log(data);
-          console.log(data.value[0].thumbnailUrl);
-          $img = data.value[0].thumbnailUrl;
-          var imageSpace = ""
-           imageSpace += "<img src=" + $img +">"
+          var img = data.value[0].thumbnailUrl;
+          var target = $(".band_{{ $event->band_id }}");
 
-           var $myvalue = '{{$event->band->name}}';
-            var $arr = $myvalue.split(" ");
-        $("."+ $arr[0]).html(imageSpace);
-
-            // alert("success");
+          target.css('background-image', 'url(' + img + ')');
         })
         .fail(function() {
             // alert("error");

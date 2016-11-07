@@ -13,7 +13,6 @@ class CreateUserBandsTable extends Migration
     public function up()
     {
         Schema::create('user_bands', function (Blueprint $table) {
-            
             $table->integer('user_id')->unsigned();
             $table->integer('band_id')->unsigned();
             $table->timestamps();
@@ -34,9 +33,8 @@ class CreateUserBandsTable extends Migration
      */
     public function down()
     {
+        // Drop FK's
         Schema::table('user_bands', function ($table) {
-
-            // Drop FK's
             $table->dropForeign('user_bands_user_id_foreign');
             $table->dropForeign('user_bands_band_id_foreign');
 

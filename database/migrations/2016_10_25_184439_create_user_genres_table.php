@@ -13,7 +13,6 @@ class CreateUserGenresTable extends Migration
     public function up()
     {
         Schema::create('user_genres', function (Blueprint $table) {
-            
             $table->integer('user_id')->unsigned();
             $table->integer('genre_id')->unsigned();
             $table->timestamps();
@@ -34,8 +33,8 @@ class CreateUserGenresTable extends Migration
      */
     public function down()
     {
+        // Drop FK's
         Schema::table('user_genres', function (Blueprint $table) {
-            // Drop FK's
             $table->dropForeign('user_genres_user_id_foreign');
             $table->dropForeign('user_genres_genre_id_foreign');
         });

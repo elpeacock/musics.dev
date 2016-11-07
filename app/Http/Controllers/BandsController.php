@@ -20,18 +20,13 @@ class BandsController extends Controller
      */
     public function index(Request $request)
     {
-        // $data['bands'] = \App\Band::paginate(15);
 
         $searchTerm = $request['search'];
 
         if (isset($request['search']) && !is_null($request['search'])) {
-
             $bands = \App\Band::searchBand($searchTerm)->paginate(15);
-
         } else {
-
             $bands = \App\Band::paginate(15);
-
         }
 
         $data = ['bands' => $bands];
@@ -48,6 +43,7 @@ class BandsController extends Controller
     {
         $genres = Genre::all();
         $data = compact('genres');
+
         return view('bands.create', $data);
     }
 
@@ -60,6 +56,7 @@ class BandsController extends Controller
     public function store(Request $request)
     {
         $band = new Band();
+
         $band->name = $request->input('bandName');
         $band->genre_id = $request->input('genre');
         $band->owner_id = $request->input('ownerID');
@@ -78,6 +75,7 @@ class BandsController extends Controller
     public function show($id)
     {
         $data['bands'] = \App\Band::findOrFail($id);
+        
         return view('bands.show') ->with($data);
     }
 

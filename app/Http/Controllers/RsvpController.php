@@ -46,8 +46,10 @@ class RsvpController extends Controller
         // $rsvp->user_id = $request->get('user_id');
 
         $rsvp = Rsvp::updateOrCreate(
-            ['event_id' => $request->get('event_id'), 'user_id' => $request->get('user_id')]
+            ['event_id' => $request->get('event_id'), 
+             'user_id' => $request->get('user_id')]
         );
+        
         return redirect()->action('UserController@show', $request->get('user_id'));
     }
 
