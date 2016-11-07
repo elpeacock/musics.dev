@@ -26,23 +26,14 @@ class EventsController extends Controller
         //search bar fxnality
         $searchTerm = $request['search'];
         $searchTown = $request['city'];
-        // dd($searchTerm);
 
         if (isset($request['search']) && !is_null($request['search'])) {
-
             $events = Event::searchEventsByBandOrDate($searchTerm)->paginate(7);
-
         } else if (isset($request['city']) && !is_null($request['city'])) {
-            // dd($request['city']);
-            
             $events = Event::searchEventsByVenue($searchTown)->paginate(7);
-
         } else {
-
             $events = \App\Event::paginate(7);
-
         }
-
 
         $cities = Venue::cities();
 
@@ -110,18 +101,15 @@ class EventsController extends Controller
     {
         $event = Event::find($id);
         $venue = Event::find($id);
+
         if (!$event) {
             abort(404);
         }
-        $data = [
-        'event' => $event
-        ];
-        $data = [
-        'venue' => $venue
-        ];
-
-
+        
+        $data = ['event' => $event];
+        $data = ['venue' => $venue];
         $data['events'] = \App\Event::findOrFail($id);
+
         return view('events.show')->with($data);
     }
 
@@ -145,7 +133,8 @@ class EventsController extends Controller
         // $event->buy_tickets = $request->get('tickets');
 
         $data = compact('bands', 'venues');
-        return view('events.create', $data);
+
+        return view('events.create')->with($data);
 
 
     }
@@ -160,12 +149,14 @@ class EventsController extends Controller
     public function update(Request $request, $id)
     {
         $event = new Event();
+
         $event->band_id = $request->get('band');
         $event->venue_id = $request->get('venue');
         $event->event_time = $request->input('time');
         $event->price = $request->input('price');
         $event->buy_tickets = $request->input('buy_tickets');
         $event->save();
+
         return redirect()->action('EventsController@show');
     }
 
@@ -178,11 +169,14 @@ class EventsController extends Controller
     public function destroy($id)
     {
         $event = Event::find($id);
+
         if (!$event) {
             abort(404);
         }
+
         $event->delete();
         $request->session()->flash('success', 'Your event was deleted successfully!');
+        
         return redirect()->action('EventsController@index');
 
     }

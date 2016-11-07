@@ -13,7 +13,6 @@ class CreateRsvpsTable extends Migration
     public function up()
     {
         Schema::create('rsvps', function (Blueprint $table) {
-            
             $table->increments('id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->integer('event_id')->unsigned();
@@ -35,8 +34,8 @@ class CreateRsvpsTable extends Migration
      */
     public function down()
     {
+        // drop FK's
         Schema::table('rsvps', function (Blueprint $table) {
-            // Drop FK's
             $table->dropForeign('rsvps_user_id_foreign');
             $table->dropForeign('rsvps_event_id_foreign');
 

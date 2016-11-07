@@ -15,6 +15,7 @@ Route::get('/', function () {
 	$data['events'] = \App\Event::paginate(15);
     return view('events.index')->with($data);
 });
+
 Route::resource('user', 'UserController');
 Route::resource('events', 'EventsController');
 Route::resource('bands', 'BandsController');
