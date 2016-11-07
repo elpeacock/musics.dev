@@ -1,27 +1,17 @@
-## Laravel PHP Framework
+## ShowUp.rocks
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+ShowUp is a web application designed for concert-goers to find out about nearby up-coming concerts and discover new artists based on their music tastes as well as a portal for local/underground bands to get the word out about their upcoming shows
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Although the initial development of the project is focused on San Antonio and surrounding cities, the project does have the capability to be taken nationwide. 
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Front end design uses HTML, CSS, Twitter Bootstrap, jQuery and Javascript, as well as implementation of the Bing image search and Google Maps API's. Back end development uses the Larvel PHP Framework, and mySQL(Database). 
 
-## Official Documentation
+Development Team:
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Joe Phearse: [LinkedIn](https://www.linkedin.com/in/joe-phearse), [Github](https://github.com/jphearse)
 
-## Contributing
+Kirk Letsinger: [LinkedIn](https://www.linkedin.com/in/kirk-letsinger), [Github](https://github.com/Kirkletsinger)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Liz Peacock: [LinkedIn](https://www.linkedin.com/in/elizabeth-peacock), [Github](https://github.com/elpeacock)
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
