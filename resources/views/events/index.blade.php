@@ -35,7 +35,7 @@
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainImg">
 
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 imgUnder bigImg" data-content="Welcome to ShowUp.buzz! A place to view events and artists!">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 imgUnder bigImg" data-content="Welcome to ShowUp.rocks! A place to view events and artists!">
     <img class="imgSize" src="/img/concert.jpg">
     </div>
 
