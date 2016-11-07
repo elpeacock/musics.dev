@@ -19,6 +19,8 @@
     
     {{-- google fonts --}}
     <link href="https://fonts.googleapis.com/css?family=Caudex:400,400i|Federo" rel="stylesheet">
+
+    <link rel="icon" href="/img/micro2.ico">
 </head>
 
 <body>
