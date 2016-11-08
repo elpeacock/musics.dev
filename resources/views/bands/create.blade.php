@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-            <h1 class="modal-title">Create Event</h1>
+            <h1 class="modal-title">Add A Band</h1>
             <form method="POST" action="{{ action('BandsController@store') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
